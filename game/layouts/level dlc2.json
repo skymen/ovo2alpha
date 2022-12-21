@@ -1,0 +1,545 @@
+{
+	"name": "Level dlc2",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "TimerTick",
+					"properties": {
+						"text": "gg fam",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 711,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 1113,
+						"y": 470,
+						"width": 1187.9473280596228,
+						"height": 153.82019159698626,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": -40
+					}
+				},
+				{
+					"type": "TimerTick",
+					"properties": {
+						"text": "time",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 715,
+					"instanceVariables": {
+						"id": "time"
+					},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 1120.0177275856079,
+						"y": 595,
+						"width": 1187.9473280596228,
+						"height": 314.3477035859421,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": -40
+					}
+				},
+				{
+					"type": "EndFlag",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 716,
+					"instanceVariables": {
+						"NextLevel": "Level 1-1"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 2879,
+						"y": 763,
+						"width": 194,
+						"height": 398,
+						"originX": 0.525773,
+						"originY": 0.497487,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TimerTick",
+					"properties": {
+						"text": "back to 1-1",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 706,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 2831,
+						"y": 381,
+						"width": 472,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0.005832145628533403,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TimerTick",
+					"properties": {
+						"text": "->",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 709,
+					"instanceVariables": {
+						"id": ""
+					},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 3032,
+						"y": 458,
+						"width": 216,
+						"height": 56,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 2.356194490192345,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Solid",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 721,
+					"instanceVariables": {
+						"enabled": true
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 732,
+						"y": 960,
+						"width": 2314,
+						"height": 8,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Solid",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 713,
+					"instanceVariables": {
+						"enabled": true
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 2432,
+						"y": 800,
+						"width": 162.61320948022706,
+						"height": 8,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5707963267948966,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Screenshot",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"antialiasing": "off"
+					},
+					"uid": 2337,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1251,
+						"y": -396,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "screenshotSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2338,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1459,
+						"y": -448,
+						"width": 250,
+						"height": 250,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Collider",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 718,
+					"instanceVariables": {
+						"State": "run",
+						"Walljump": false,
+						"HasSmallWalljumped": false,
+						"Side": 1,
+						"CanSlide": true,
+						"Sliding": false,
+						"SlideTime": 0.5,
+						"SlideRefresh": 0.3,
+						"Plunge": false,
+						"Pound": true,
+						"CanPoundLongJump": false,
+						"PoundLongJump": false,
+						"Stun": false,
+						"LongJump": false,
+						"WallRun": false,
+						"CanWallRun": true,
+						"WallRunTime": 0.4,
+						"Falling": false,
+						"Skin": "",
+						"HitBuffer": 2,
+						"HitBufferAway": 10,
+						"HitBufferCount": 0,
+						"Slipping": false,
+						"Ghost": false,
+						"GhostData": "",
+						"ColBuffer": 3,
+						"ColBufferCount": 0,
+						"NormalAngle": 0,
+						"MaxSpeed": 0,
+						"TopCrushSize": -1,
+						"RightCrushSize": -1,
+						"LeftCrushSize": -1,
+						"BottomCrushSize": -1,
+						"wavebounce": false
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "collider",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Platform": {
+							"properties": {
+								"max-speed": 660,
+								"acceleration": 3000,
+								"deceleration": 3000,
+								"jump-strength": 1300,
+								"gravity": 3000,
+								"max-fall-speed": 2000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"LineOfSight": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"world": {
+						"x": 1170,
+						"y": 807,
+						"width": 64,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 724626538162717,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 815603036629173,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 4000,
+	"height": 1080,
+	"unboundedScrolling": true,
+	"eventSheet": "Levels"
+}

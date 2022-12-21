@@ -1,0 +1,25 @@
+{
+	"name": "UIElements",
+	"plugin-id": "Sprite",
+	"sid": 634093002194104,
+	"instanceVariables": [
+		{
+			"name": "Text",
+			"type": "string",
+			"desc": "",
+			"sid": 767860146520494
+		},
+		{
+			"name": "OutlineSize",
+			"type": "number",
+			"desc": "",
+			"sid": 769026606027135
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"UIButton",
+		"UIDialog"
+	]
+}

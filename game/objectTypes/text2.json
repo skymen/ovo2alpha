@@ -1,0 +1,28 @@
+{
+	"name": "Text2",
+	"plugin-id": "Text",
+	"sid": 243894004948754,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "runtime",
+			"type": "boolean",
+			"desc": "",
+			"sid": 955167921590540
+		},
+		{
+			"name": "getValue",
+			"type": "string",
+			"desc": "",
+			"sid": 101449407890143
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobject",
+			"name": "GameObject",
+			"sid": 571600245980848
+		}
+	],
+	"effectTypes": []
+}

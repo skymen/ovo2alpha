@@ -1,0 +1,200 @@
+{
+	"name": "RocketLauncher",
+	"plugin-id": "Sprite",
+	"sid": 673757866355515,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Laser",
+			"type": "boolean",
+			"desc": "",
+			"sid": 563988076340233
+		},
+		{
+			"name": "AlternateAiming",
+			"type": "boolean",
+			"desc": "",
+			"sid": 647790466158615
+		},
+		{
+			"name": "Smart",
+			"type": "boolean",
+			"desc": "",
+			"sid": 277083192111363
+		},
+		{
+			"name": "RocketSpeed",
+			"type": "number",
+			"desc": "Determines the projectile's speed, -1 for default speed",
+			"sid": 287735611397581
+		},
+		{
+			"name": "Range",
+			"type": "number",
+			"desc": "",
+			"sid": 643221789979137
+		},
+		{
+			"name": "RateOfFire",
+			"type": "number",
+			"desc": "",
+			"sid": 536085321691395
+		},
+		{
+			"name": "RotateSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 872941973038755
+		},
+		{
+			"name": "CanShoot",
+			"type": "boolean",
+			"desc": "",
+			"sid": 274513891868225
+		},
+		{
+			"name": "MultiBullets",
+			"type": "boolean",
+			"desc": "",
+			"sid": 679182196204835
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 936645270908396
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 490648208759732
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.125,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 59,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.90625,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 965866261770791,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.125,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 56,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.90625,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 603408547465738,
+				"name": "PredictiveDefault",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.125,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 57,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.90625,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 665262504012393,
+				"name": "Laser",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.125,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 58,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0.90625,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 242926107152753,
+				"name": "PredictiveLaser",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

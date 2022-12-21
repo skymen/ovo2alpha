@@ -1,0 +1,2327 @@
+{
+	"name": "Menu",
+	"layers": [
+		{
+			"name": "Background",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "SmallButtonsIcons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "close",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2307,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -252,
+						"y": 101,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 986474440004897,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Menus",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "OvO2LogoText",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2,
+					"instanceVariables": {},
+					"behaviors": {
+						"GameObjectSkymen": {
+							"properties": {
+								"name": "title",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 3,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 2,
+								"period-offset-random": 0,
+								"magnitude": 30,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 577.2706700345477,
+						"y": 209,
+						"width": 429,
+						"height": 151,
+						"originX": 0.5023310023310024,
+						"originY": 0.5099337748344371,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "OvO2LogoNumber",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 4,
+					"instanceVariables": {},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "titlenumber",
+								"parent-name": "title",
+								"parent-layer": false
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 2,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "size",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 30,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 854,
+						"y": 206,
+						"width": 95.90368691840537,
+						"height": 136.6309009797965,
+						"originX": 0.46137152777777785,
+						"originY": 0.5039655050063022,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText",
+					"properties": {
+						"text": "v0.3alpha ",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 58,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "titlenumber",
+								"parent-layer": false
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 1,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 2,
+								"period-offset-random": 0,
+								"magnitude": 10,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 858,
+						"y": 285,
+						"width": 210.49697292302352,
+						"height": 53.2739252459504,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText2",
+					"properties": {
+						"text": "Please note that this game is still in development, so any feedback is very important to us.\nLet us know on our discord server at [background=#000000][color=#ffffff] discord.gg/ZRD9QUj[/color] .[/background]",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 61,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 1237.5,
+						"width": 1273.4969729230236,
+						"height": 90.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 62,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 604,
+						"width": 319,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 60,
+					"instanceVariables": {
+						"Text": "PLAY",
+						"OutlineSize": 8,
+						"entry": true,
+						"onClick": "runtime.goToLayout(\"Level 1-1\")",
+						"noGamepad": false,
+						"tooltip": "[sfdx=offsetx cos(t*360)*5]Play the game[/sfdx]",
+						"tooltipWidth": 200,
+						"tooltipHeight": 50,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "",
+								"sub-skin-tag": "",
+								"sync-mode": "no sync",
+								"use-default-skin": "yes",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 639,
+						"y": 604,
+						"width": 299,
+						"height": 94,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 63,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 815,
+						"width": 319,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 64,
+					"instanceVariables": {
+						"Text": "SETTINGS",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "runtime.callFunction(\"openDialog\", \"settings\")",
+						"noGamepad": false,
+						"tooltip": "[sfdx=offsety cos(t*360)*3]Opens the settings[/sfdx]",
+						"tooltipWidth": 250,
+						"tooltipHeight": 50,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 2,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "",
+								"sub-skin-tag": "",
+								"sync-mode": "no sync",
+								"use-default-skin": "yes",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 639,
+						"y": 815,
+						"width": 299,
+						"height": 94,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 976212002136594,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Settings",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "UIDialogOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2306,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 640,
+						"width": 998,
+						"height": 604,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIDialog",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2305,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"id": "settings"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Dialog": {
+							"properties": {
+								"open-animation": "scaleup",
+								"open-animation-tweenning": "quadratic out",
+								"open-animation-duration": 300,
+								"open-sound": "",
+								"close-animation": "reverse",
+								"close-animation-tweenning": "quadratic out",
+								"close-animation-duration": 300,
+								"close-sound": "",
+								"close-button-name": "",
+								"is-modal": "yes"
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 640,
+						"width": 971,
+						"height": 574,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Circle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2308,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"entry": true,
+						"onClick": "if (!runtime.objects.Inputs.getFirstInstance().instVars.Listening) {\n  runtime.callFunction(\"closeDialog\", \"settings\")\n}",
+						"noGamepad": false,
+						"tooltip": "[sfdx=offsetx cos(t*360+i*300)*2][sfdx=offsety sin(t*360+i*300)*2]Close[/sfdx][/sfdx]",
+						"tooltipWidth": 80,
+						"tooltipHeight": 50,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -80,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "smallbuttons",
+								"sub-skin-tag": "close",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1123,
+						"y": 349,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.8470588235294118,
+							0.8470588235294118,
+							0.8470588235294118,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2310,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 391.25,
+						"y": 679.8433951882733,
+						"width": 108.90034449285717,
+						"height": 108.90034449285717,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2311,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "runtime.callFunction(\"ChangeKey\", \"LeftInput\")",
+						"noGamepad": true,
+						"tooltip": "Remap the [color=#FF0000]left input",
+						"tooltipWidth": 140,
+						"tooltipHeight": 80,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "smallbuttons",
+								"sub-skin-tag": "edit",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 391.25,
+						"y": 679.8433951882733,
+						"width": 88.87788453792722,
+						"height": 88.87788453792722,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Tahoma",
+						"size": 36,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 2312,
+					"instanceVariables": {
+						"runtime": true,
+						"getValue": "return runtime.callFunction(\"CharFromKey\", runtime.objects.Inputs.getFirstInstance().instVars.LeftInput)"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 183.25,
+						"y": 639.8433951882733,
+						"width": 139,
+						"height": 81,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText2",
+					"properties": {
+						"text": "[background=#000000][color=#ffffff] Left Input[/color] :[/background]",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 2313,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 325.25,
+						"y": 588.8433951882733,
+						"width": 312.4969729230236,
+						"height": 96.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2314,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 973.25,
+						"y": 680.8433951882733,
+						"width": 108.90034449285717,
+						"height": 108.90034449285717,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2315,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "runtime.callFunction(\"ChangeKey\", \"RightInput\")",
+						"noGamepad": true,
+						"tooltip": "Remap the [color=#FF0000]right input",
+						"tooltipWidth": 140,
+						"tooltipHeight": 80,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "smallbuttons",
+								"sub-skin-tag": "edit",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 973.25,
+						"y": 680.8433951882733,
+						"width": 88.87788453792722,
+						"height": 88.87788453792722,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Tahoma",
+						"size": 36,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 2316,
+					"instanceVariables": {
+						"runtime": true,
+						"getValue": "return runtime.callFunction(\"CharFromKey\", runtime.objects.Inputs.getFirstInstance().instVars.RightInput)"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 765.25,
+						"y": 640.8433951882733,
+						"width": 139,
+						"height": 81,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText2",
+					"properties": {
+						"text": "[background=#000000][color=#ffffff] Right Input[/color] :[/background]",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 2317,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 931.25,
+						"y": 589.8433951882733,
+						"width": 359.4969729230236,
+						"height": 96.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2318,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 682,
+						"y": 507,
+						"width": 108.90034449285717,
+						"height": 108.90034449285717,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2319,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "runtime.callFunction(\"ChangeKey\", \"UpInput\")",
+						"noGamepad": true,
+						"tooltip": "Remap the [color=#FF0000]up input[/color]",
+						"tooltipWidth": 140,
+						"tooltipHeight": 80,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "smallbuttons",
+								"sub-skin-tag": "edit",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 682,
+						"y": 507,
+						"width": 88.87788453792722,
+						"height": 88.87788453792722,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Tahoma",
+						"size": 36,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 2320,
+					"instanceVariables": {
+						"runtime": true,
+						"getValue": "return runtime.callFunction(\"CharFromKey\", runtime.objects.Inputs.getFirstInstance().instVars.UpInput)"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 474,
+						"y": 467,
+						"width": 139,
+						"height": 81,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText2",
+					"properties": {
+						"text": "[background=#000000][color=#ffffff] Up Input[/color] :[/background]",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 2321,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 416,
+						"width": 359.4969729230236,
+						"height": 96.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2322,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						}
+					},
+					"world": {
+						"x": 682,
+						"y": 839,
+						"width": 108.90034449285717,
+						"height": 108.90034449285717,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2323,
+					"instanceVariables": {
+						"Text": "",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "runtime.callFunction(\"ChangeKey\", \"DownInput\")",
+						"noGamepad": true,
+						"tooltip": "Remap the [color=#FF0000]down input",
+						"tooltipWidth": 140,
+						"tooltipHeight": 80,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": -100,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "down",
+								"hover-animation": "none",
+								"focus-animation": "up",
+								"normal-color": "255, 255,  255",
+								"hover-color": "",
+								"clicked-color": "220, 220, 220",
+								"disabled-color": "",
+								"focus-color": "235, 235, 235",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "width",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "height",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 1,
+								"period-offset-random": 0,
+								"magnitude": 5,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "angle",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 2,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "icons",
+								"skin-tag": "smallbuttons",
+								"sub-skin-tag": "edit",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "no",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 682,
+						"y": 839,
+						"width": 88.87788453792722,
+						"height": 88.87788453792722,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.7529411764705882,
+							0.7529411764705882,
+							0.7529411764705882,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Tahoma",
+						"size": 36,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 2324,
+					"instanceVariables": {
+						"runtime": true,
+						"getValue": "return runtime.callFunction(\"CharFromKey\", runtime.objects.Inputs.getFirstInstance().instVars.DownInput)"
+					},
+					"behaviors": {
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						}
+					},
+					"world": {
+						"x": 474,
+						"y": 799,
+						"width": 139,
+						"height": 81,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIText2",
+					"properties": {
+						"text": "[background=#000000][color=#ffffff] Down Input[/color] :[/background]",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 2325,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 748,
+						"width": 359.4969729230236,
+						"height": 96.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UITooltipOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2333,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": true
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1507,
+						"y": 176,
+						"width": 319,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UITooltip",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2334,
+					"instanceVariables": {
+						"followMouse": 0,
+						"offsetX": 0,
+						"offsetY": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1507,
+						"y": 176,
+						"width": 301,
+						"height": 98,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UITooltiptText",
+					"properties": {
+						"text": "Tooltip",
+						"enable-bbcode": true,
+						"character-width": 37,
+						"character-height": 68,
+						"character-set": "AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêefghijklmnoôpqrstuùvwxyz0123456789.,;:?!-_~#\"'&()[]{}|`\\/@°+=*$£€<>%^↑↓→←",
+						"spacing-data": "\n[[15,\" \"],[8,\"i.:!'|\"],[13,\",;\"],[14,\"`\"],[16,\"°\"],[18,\"↑\"],[19,\"l\\\"()[]{}↓\"],[24,\"fkt-*<>\"],[30,\"AÀBCDÉÈËÊEFGHIJKLMNOÔPQRSTUÙVWXYZaàbcdéèëêeghjmnoôpqrsuùvwxyz0123456789?_#\\\\/+=$£%^\"],[33,\"&\"],[35,\"~@€→←\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 2332,
+					"instanceVariables": {},
+					"behaviors": {
+						"SpritefontDeluxe": {
+							"properties": {
+								"tw-params": "value opacity 0; duration type 0.1; duration fade 0.1",
+								"tw-easing": "linear"
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "titlenumber",
+								"parent-layer": false
+							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1509,
+						"y": 175.5,
+						"width": 296.4969729230235,
+						"height": 92.27392524595041,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 885740501298460,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": true
+		},
+		{
+			"name": "debug",
+			"overriden": 0,
+			"instances": [],
+			"sid": 643871450579789,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				0.5
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "tooltip",
+			"overriden": 0,
+			"instances": [],
+			"sid": 136191018750095,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 889263081838691,
+	"nonworld-instances": [
+		{
+			"type": "InputBuffer",
+			"properties": {
+				"width": 0,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 31,
+			"instanceVariables": {}
+		},
+		{
+			"type": "Globals",
+			"properties": {},
+			"uid": 34,
+			"instanceVariables": {
+				"Down": false,
+				"PerLevel": false,
+				"StartTime": 0,
+				"ScoreBase": 16,
+				"StartOfGame": true,
+				"BlowSave": false,
+				"Skin": "",
+				"NbLevels": 40,
+				"DebugMode": false,
+				"RandomSkin": false,
+				"TestMode": false,
+				"LastLayout": "",
+				"Record": false,
+				"EasyMode": true
+			}
+		},
+		{
+			"type": "RecordedPlayer",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 35,
+			"instanceVariables": {}
+		},
+		{
+			"type": "Inputs",
+			"properties": {},
+			"uid": 36,
+			"instanceVariables": {
+				"LeftInput": 37,
+				"UpInput": 38,
+				"RightInput": 39,
+				"DownInput": 40,
+				"Listening": false,
+				"Next": 0
+			}
+		},
+		{
+			"type": "SkinGroup",
+			"properties": {
+				"tag": "main"
+			},
+			"uid": 20,
+			"instanceVariables": {}
+		},
+		{
+			"type": "CurrentCourse",
+			"properties": {},
+			"uid": 56,
+			"instanceVariables": {
+				"CurrentLevel": 0
+			}
+		}
+	],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 1280,
+	"unboundedScrolling": true,
+	"eventSheet": "Menu"
+}

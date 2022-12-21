@@ -1,0 +1,12 @@
+{
+	"name": "GlobalRuntime",
+	"plugin-id": "skymen_GlobalRuntime",
+	"sid": 913544005786677,
+	"singleglobal-inst": {
+		"type": "GlobalRuntime",
+		"properties": {
+			"global-runtime-name": "sdk_runtime"
+		},
+		"uid": 2297
+	}
+}

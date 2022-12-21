@@ -1,0 +1,4754 @@
+{
+	"name": "Gameplay",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "UnlockAchievement",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 971897244062510
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemies",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemies > Spikes",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Collider",
+									"sid": 347218604648122,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Spike",
+									"sid": 487670991717339,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Spike2",
+									"sid": 724129945053097,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 967685144478233
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 585263095718586
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Spike",
+									"sid": 136869723378820,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Spike2",
+									"sid": 568438414005688,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 188700471487781
+						}
+					],
+					"sid": 752794358721513
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 540388315536657,
+							"parameters": {
+								"object": "Enemies"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Enemies",
+							"sid": 712504870184172,
+							"parameters": {
+								"instance-variable": "active"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Collider",
+							"sid": 841187691310296,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"dead\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 448797122220300,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Collider",
+							"sid": 239479446174799,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "HitBufferCount",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 679648565811482,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Collider",
+									"sid": 478600007666684,
+									"parameters": {
+										"instance-variable": "HitBufferCount",
+										"comparison": 5,
+										"value": "Self.HitBuffer"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 982842817263533,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "hasKilled",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 579489557063087
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 408093581275038,
+											"parameters": {
+												"object": "Enemies"
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 196939058398947,
+											"parameters": {
+												"variable": "hasKilled"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 502218543011034,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemies",
+													"sid": 619738172030350,
+													"parameters": {
+														"instance-variable": "distToPlayer",
+														"comparison": 4,
+														"value": "distance(Self.X, Self.Y, Collider.X, Collider.Y)"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 771970620571892,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Collider",
+															"sid": 416680157862531,
+															"parameters": {
+																"instance-variable": "HitBufferCount",
+																"comparison": 5,
+																"value": "Self.HitBufferAway"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 859743986877994,
+															"parameters": {
+																"variable": "hasKilled",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 292600973800385
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 116159958969470
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 551534986439124,
+													"parameters": {
+														"variable": "hasKilled",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 772206833681292
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 589814654201174,
+											"parameters": {
+												"variable": "hasKilled"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "GameplayDeath",
+											"sid": 528270612985092
+										}
+									],
+									"sid": 731483270655623,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemies",
+													"sid": 391892935223620,
+													"parameters": {
+														"instance-variable": "destroyOnTouch"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Enemies",
+													"sid": 162962389915283
+												}
+											],
+											"sid": 243299049138218
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemies",
+									"sid": 538848712669579,
+									"parameters": {
+										"instance-variable": "distToPlayer",
+										"value": "distance(Self.X, Self.Y, Collider.X, Collider.Y)"
+									}
+								}
+							],
+							"sid": 295188153379145
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 723919435508917
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Collider",
+							"sid": 793392609651167,
+							"parameters": {
+								"instance-variable": "HitBufferCount",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Collider",
+							"sid": 326602040182880,
+							"parameters": {
+								"instance-variable": "HitBufferCount",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemies",
+							"sid": 226279404628875,
+							"parameters": {
+								"instance-variable": "distToPlayer",
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 793347381747664
+				}
+			],
+			"sid": 584892422329300
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Jump Boost",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Collider",
+							"sid": 876916904094425,
+							"parameters": {
+								"object": "JumpBoost"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 725742609980762,
+							"parameters": {
+								"instance-variable": "Pound"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 943058764593583,
+							"parameters": {
+								"instance-variable": "Plunge"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 470057446040562,
+							"parameters": {
+								"instance-variable": "Stun"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "Collider",
+							"sid": 691785405455428,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "(Self.Platform.Gravity*JumpBoost.Force)*sin(JumpBoost.Angle + 270)"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Collider",
+							"sid": 406633000508367,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "max((Self.Platform.Gravity*JumpBoost.Force)*cos(JumpBoost.Angle + 270), 660)"
+							}
+						},
+						{
+							"id": "set-vector-x",
+							"objectClass": "Collider",
+							"sid": 507740978919710,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "(Self.Platform.Gravity*JumpBoost.Force)*cos(JumpBoost.Angle + 270) + Self.Platform.VectorX"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 505312469423542,
+							"parameters": {
+								"type": "log",
+								"message": "\"Jump Boost\""
+							}
+						}
+					],
+					"sid": 358904309354959,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "JumpBoost",
+									"sid": 628703720517484,
+									"parameters": {
+										"instance-variable": "Decel"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-deceleration",
+									"objectClass": "Collider",
+									"sid": 729547708374989,
+									"behaviorType": "Platform",
+									"parameters": {
+										"deceleration": "0"
+									}
+								}
+							],
+							"sid": 964370937619564
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerRig",
+							"sid": 336627350355534,
+							"parameters": {
+								"object": "JumpBoost"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Collider",
+							"sid": 740728422630637,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"dead\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "PlayerRig",
+							"sid": 520338981766912,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "270 + JumpBoost.Angle"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "PlayerRig",
+							"sid": 767171620871581,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Self.Bullet.Gravity*JumpBoost.Force"
+							}
+						}
+					],
+					"sid": 544494924702043
+				}
+			],
+			"sid": 823574865511386
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TP",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 476890698138569
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 547278047900977,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						}
+					],
+					"sid": 243732264960013,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 335762722393473,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"comparison": 1,
+										"value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "-> Function: Call \"Achievements > Unlock\" (UnlockAchievement)"
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 935500092396704,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 842662367552578
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 263934988114867,
+							"parameters": {
+								"object": "EndFlag"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 366692727348098,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 280304377125199
+						}
+					],
+					"actions": [],
+					"sid": 609376060677065,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "ID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 957877829849501
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 972843629625945,
+									"parameters": {
+										"variable": "ID",
+										"value": "int(tokenat(LayoutName, 1, \" \"))"
+									}
+								}
+							],
+							"sid": 685291911777024
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 290635712063180,
+									"parameters": {
+										"variable": "ID",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 483012353287778,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 897997238434861
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 780469174193010,
+									"parameters": {
+										"variable": "ID",
+										"comparison": 0,
+										"value": "24"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 488359092511093,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 854239646459222
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 265907443940751,
+									"parameters": {
+										"variable": "ID",
+										"comparison": 0,
+										"value": "32"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 676939442242026,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 801351232276871
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 268263568647344,
+									"parameters": {
+										"variable": "ID",
+										"comparison": 0,
+										"value": "40"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 435272240556984,
+									"parameters": {
+										"variable": "UnlockAchievement",
+										"value": "6"
+									}
+								}
+							],
+							"sid": 239230318013100
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 795327290442311,
+									"parameters": {
+										"instance-variable": "PerLevel"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "-> Function: Call \"Menu > End\" ()"
+								}
+							],
+							"sid": 174846902176785,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 756194745897692,
+											"parameters": {
+												"variable": "UnlockAchievement",
+												"comparison": 1,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "-> Function: Call \"Achievements > Unlock\" (UnlockAchievement)"
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 728687953112199,
+											"parameters": {
+												"variable": "UnlockAchievement",
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 924377765944617
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 268795654204556
+								}
+							],
+							"actions": [],
+							"sid": 887375281809269,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Globals",
+											"sid": 858208785797573,
+											"parameters": {
+												"instance-variable": "NbLevels",
+												"comparison": 4,
+												"value": "int(tokenat(LayoutName, 1, \" \"))"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 979451946685401,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-in-preview",
+													"objectClass": "System",
+													"sid": 789889579518423
+												},
+												{
+													"id": "is-on-platform",
+													"objectClass": "System",
+													"sid": 644347208999277,
+													"parameters": {
+														"platform": "nwjs"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Globals",
+													"sid": 685810612139657,
+													"parameters": {
+														"instance-variable": "TestMode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "-> Function: Call \"Menu > Next\" ()"
+												}
+											],
+											"sid": 934187959550424,
+											"disabled": true,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "EndFlag",
+											"sid": 182823981287779,
+											"parameters": {
+												"instance-variable": "NextLevel",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout-by-name",
+											"objectClass": "System",
+											"sid": 429539206412150,
+											"parameters": {
+												"layout": "EndFlag.NextLevel"
+											}
+										}
+									],
+									"sid": 934561670728847
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 579971836664743
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "-> Function: Call \"Menu > EndGame\" (1)"
+										}
+									],
+									"sid": 241886234925986
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 498605097439997
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 191638146051171
+						}
+					],
+					"actions": [
+						{
+							"id": "execute-javascript",
+							"objectClass": "Browser",
+							"sid": 172012423019894,
+							"parameters": {
+								"javascript": "\"globalThis.sdk_runtime = this._runtime\""
+							}
+						}
+					],
+					"sid": 428115506907955
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "ButtonTrigger",
+							"sid": 903592045492094,
+							"parameters": {
+								"frame-number": "1-Self.active"
+							}
+						}
+					],
+					"sid": 470766381966795
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 889112215552988,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 826736593636383,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Collider",
+									"sid": 107235861613851,
+									"parameters": {
+										"object": "ButtonTrigger"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 605487952802066,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "ButtonTrigger",
+											"sid": 345396717548970,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "ButtonTrigger",
+											"sid": 886519283180591,
+											"parameters": {
+												"instance-variable": "active",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ButtonTrigger",
+											"sid": 652711393149596,
+											"parameters": {
+												"frame-number": "1-Self.active"
+											}
+										},
+										{
+											"type": "script",
+											"script": "const button = runtime.objects.ButtonTrigger.getFirstPickedInstance();\nbutton.Activate()"
+										}
+									],
+									"sid": 123182948598349,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "+ System: For each MoveArea\n+ MoveArea: ID = ButtonTrigger.ID\n----+ MoveArea: Is GrabOnStart\n--------+ MoveArea: Is overlapping PinnableSprites\n---------> (no actions)\n\n--------+ MoveArea: Is overlapping PinnableTBG\n---------> (no actions)\n"
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Head",
+									"sid": 760735282806515,
+									"parameters": {
+										"object": "ButtonTrigger"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Collider",
+									"sid": 398229375620033,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"dead\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 325861306318285,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "ButtonTrigger",
+											"sid": 334263709858451,
+											"parameters": {
+												"instance-variable": "active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "ButtonTrigger",
+											"sid": 813948497637025,
+											"parameters": {
+												"instance-variable": "active",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ButtonTrigger",
+											"sid": 177470983209991,
+											"parameters": {
+												"frame-number": "1-Self.active"
+											}
+										},
+										{
+											"type": "script",
+											"script": "const button = runtime.objects.ButtonTrigger.getFirstPickedInstance();\nbutton.Activate()"
+										}
+									],
+									"sid": 457703331955272,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "+ System: For each MoveArea\n+ MoveArea: ID = ButtonTrigger.ID\n----+ MoveArea: Is GrabOnStart\n--------+ MoveArea: Is overlapping PinnableSprites\n---------> (no actions)\n\n--------+ MoveArea: Is overlapping PinnableTBG\n---------> (no actions)\n"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 332482466855155
+						}
+					],
+					"actions": [],
+					"sid": 997724776537635,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 674842821455293,
+									"parameters": {
+										"object": "ButtonTrigger"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "ButtonTrigger",
+									"sid": 941353108292176,
+									"parameters": {
+										"x": "Self.InitX = -1? Self.X: Self.InitX",
+										"y": "Self.InitY = -1? Self.Y: Self.InitY"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "ButtonTrigger",
+									"sid": 446753354230571,
+									"parameters": {
+										"angle": "Self.InitAngle = 999? Self.Angle: Self.InitAngle"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ButtonTrigger",
+									"sid": 475404012427172,
+									"parameters": {
+										"instance-variable": "InitX",
+										"value": "Self.X"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ButtonTrigger",
+									"sid": 927533178315087,
+									"parameters": {
+										"instance-variable": "InitY",
+										"value": "Self.Y"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "ButtonTrigger",
+									"sid": 138029979070080,
+									"parameters": {
+										"instance-variable": "InitAngle",
+										"value": "Self.Angle"
+									}
+								},
+								{
+									"type": "script",
+									"script": "const button = runtime.objects.ButtonTrigger.getFirstPickedInstance();\nbutton.Activate = new Function(\"sdkSelf\", \"runtime\", button.instVars.OnActivate).bind(button, sdk_runtime.GetInstanceByUID(button.uid), runtime);"
+								}
+							],
+							"sid": 735270102023232,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "ButtonTrigger",
+											"sid": 297519536460286,
+											"parameters": {
+												"instance-variable": "active"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "ButtonTrigger",
+											"sid": 618899327344556,
+											"parameters": {
+												"frame-number": "1-Self.active"
+											}
+										}
+									],
+									"sid": 854596910093029,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "ButtonTrigger",
+													"sid": 718400546767527,
+													"parameters": {
+														"instance-variable": "PersistAfterDeath"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Globals",
+													"sid": 112009956073390,
+													"parameters": {
+														"instance-variable": "LastLayout",
+														"comparison": 0,
+														"value": "LayoutName"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Globals",
+													"sid": 846459976846470,
+													"parameters": {
+														"instance-variable": "EasyMode"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 965343519020789,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "+ System: For each MoveArea\n+ MoveArea: ID = ButtonTrigger.ID\n-> (no actions)\n"
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 758743363459488
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "ButtonTrigger",
+													"sid": 144219560939731,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "ButtonTrigger",
+													"sid": 934978484612953,
+													"parameters": {
+														"frame-number": "1-Self.active"
+													}
+												}
+											],
+											"sid": 579232524596056
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 105109055331975
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MovingArea",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "+ System: On start of layout\n----+ System: For each MoveArea\n--------+ MoveArea: Is overlapping MvArea\n---------> Browser: Log in console: \"Collision !\"\n---------> Browser: Log in console: \"Move Area ID number \" & MoveArea.IID\n------------+ System: For each MvArea\n-------------> Browser: Log in console: \"Move Area ID number \" & MvArea.IID\n                | Local number CurImportance‎ = 0\n                | Local number CurUID‎ = 0\n----------------+ MvArea: Is Nested\n-----------------> System: Set CurImportance to MoveArea.Importance\n-----------------> System: Set CurUID to MoveArea.UID\n--------------------+ System: Pick all MoveArea\n--------------------+ MoveArea: Pick instance with UID MvArea.Parent\n------------------------+ System: CurImportance > MoveArea.Importance\n----------------------------+ System: Pick all MoveArea\n----------------------------+ MoveArea: Pick instance with UID CurUID\n--------------------------------+ System: MvArea.Importance > MoveArea.Importance\n---------------------------------> MvArea: Set Parent to MoveArea.UID\n---------------------------------> MvArea: Set Nested to True\n---------------------------------> MvArea: Set OffsetX to MvArea.X - MoveArea.X\n---------------------------------> MvArea: Set OffsetX to MvArea.Y - MoveArea.Y\n\n--------------------------------+ System: MvArea.Importance < MoveArea.Importance\n---------------------------------> MoveArea: Set Parent to MvArea.UID\n---------------------------------> MoveArea: Set Nested to True\n---------------------------------> MoveArea: Set OffsetX to MoveArea.X - MvArea.X\n---------------------------------> MoveArea: Set OffsetY to MoveArea.Y - MvArea.Y\n\n----------------+ System: Else\n--------------------+ System: MvArea.Importance > MoveArea.Importance\n---------------------> MvArea: Set Parent to MoveArea.UID\n---------------------> MvArea: Set Nested to True\n---------------------> MvArea: Set OffsetX to MvArea.X - MoveArea.X\n---------------------> MvArea: Set OffsetX to MvArea.Y - MoveArea.Y\n\n--------------------+ System: MvArea.Importance < MoveArea.Importance\n---------------------> MoveArea: Set Parent to MvArea.UID\n---------------------> MoveArea: Set Nested to True\n---------------------> MoveArea: Set OffsetX to MoveArea.X - MvArea.X\n---------------------> MoveArea: Set OffsetY to MoveArea.Y - MvArea.Y\n\n----+ System: For each MoveArea\n--------+ MoveArea: Is Nested\n---------> MoveArea: Set animation frame to 1\n\n----+ System: For each PinnableSprites\n--------+ MoveArea: Is overlapping PinnableSprites\n--------+ MoveArea: Pick instance with highest Importance\n---------> (no actions)\n\n----+ (no conditions)\n--------+ MoveArea: Pick instance with highest Importance\n---------> (no actions)\n\n----+ System: For each PinnableTBG\n--------+ MoveArea: Is overlapping PinnableTBG\n--------+ MoveArea: Pick instance with highest Importance\n---------> (no actions)\n\n+ System: For each MoveArea\n----+ MoveArea: Is Nested\n        | Local number ParX‎ = 0\n        | Local number ParY‎ = 0\n        | Local number ParAngle‎ = 0\n--------+ MvArea: Pick instance with UID MoveArea.Parent\n---------> System: Set ParX to MvArea.X\n---------> System: Set ParY to MvArea.Y\n---------> System: Set ParAngle to MvArea.Angle\n"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 639960780279756,
+							"parameters": {
+								"object": "MoveArea"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "removefromparent7",
+							"objectClass": "Collider",
+							"sid": 512267920164463,
+							"behaviorType": "GameObject"
+						}
+					],
+					"sid": 856847056103201,
+					"disabled": true
+				},
+				{
+					"functionName": "MoveArea",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "ID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 809905729340380
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 987437301554247,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "MoveArea",
+									"sid": 975052307319325,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "ID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "MoveArea",
+									"sid": 460252936801953,
+									"parameters": {
+										"instance-variable": "AutoStart",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 905585555202250
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 330677685314156,
+							"parameters": {
+								"object": "MoveArea"
+							}
+						},
+						{
+							"id": "isparent1",
+							"objectClass": "Collider",
+							"sid": 154226859846603,
+							"behaviorType": "GameObject",
+							"parameters": {
+								"parent_name0": "MoveArea.GameObject.name"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "addchildbyname10",
+							"objectClass": "MoveArea",
+							"sid": 104203566247056,
+							"behaviorType": "GameObject",
+							"parameters": {
+								"name0": "\"collider\""
+							}
+						}
+					],
+					"sid": 904064504722891,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 727645811732349,
+							"parameters": {
+								"object": "MoveArea"
+							}
+						},
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 187814249824837
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "MoveArea",
+							"sid": 459752565516040,
+							"parameters": {
+								"instance-variable": "curMovement",
+								"comparison": 2,
+								"value": "tokencount(Self.Movement, newline)"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "MoveArea",
+							"sid": 162044777035706,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"wait\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "MoveArea",
+							"sid": 752114970060756,
+							"parameters": {
+								"instance-variable": "AutoStart"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 859131627257164,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "currentMovement",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 655407248709317
+						},
+						{
+							"eventType": "variable",
+							"name": "currentCommand",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 195313578438848
+						},
+						{
+							"eventType": "variable",
+							"name": "temp",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 433301300740634
+						},
+						{
+							"eventType": "variable",
+							"name": "temp2",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 862063214110943
+						},
+						{
+							"eventType": "variable",
+							"name": "mustwait",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 208016995848906
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 122425223844260,
+									"parameters": {
+										"variable": "currentMovement",
+										"value": "tokenat(MoveArea.Movement, MoveArea.curMovement, newline)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 778823736991183,
+									"parameters": {
+										"variable": "currentCommand",
+										"value": "lowercase(tokenat(currentMovement, 0, \" \"))"
+									}
+								}
+							],
+							"sid": 788029058387039
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 226051882718952,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"move\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-two-properties",
+									"objectClass": "MoveArea",
+									"sid": 817676007769061,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "str(MoveArea.UID)&\"-\"&MoveArea.curMovement",
+										"property": "position",
+										"end-x": "left(tokenat(currentMovement, 1, \" \"), 1) = \"~\"? Self.X + float(right(tokenat(currentMovement, 1, \" \"), len(tokenat(currentMovement, 1, \" \")) - 1)) : float(tokenat(currentMovement, 1, \" \"))",
+										"end-y": "left(tokenat(currentMovement, 2, \" \"), 1) = \"~\"? Self.Y + float(right(tokenat(currentMovement, 2, \" \"), len(tokenat(currentMovement, 2, \" \")) - 1)) : float(tokenat(currentMovement, 2, \" \"))",
+										"time": "max(float(tokenat(currentMovement, 3, \" \")), dt)",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 932434083023001,
+									"parameters": {
+										"variable": "temp",
+										"value": "left(tokenat(currentMovement, 1, \" \"), 1) = \"~\"? MoveArea.X + float(right(tokenat(currentMovement, 1, \" \"), len(tokenat(currentMovement, 1, \" \")) - 1)) : float(tokenat(currentMovement, 1, \" \"))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 323462391237464,
+									"parameters": {
+										"variable": "temp2",
+										"value": "left(tokenat(currentMovement, 2, \" \"), 1) = \"~\"? MoveArea.Y + float(right(tokenat(currentMovement, 2, \" \"), len(tokenat(currentMovement, 2, \" \")) - 1)) : float(tokenat(currentMovement, 2, \" \"))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 296775442717452,
+									"parameters": {
+										"variable": "mustwait",
+										"value": "tokencount(currentMovement, \" \") <= 4 | int(tokenat(currentMovement, 4, \" \"))? max(float(tokenat(currentMovement, 3, \" \")), dt) : 0"
+									}
+								}
+							],
+							"sid": 784911750853967
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 239388078080678,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"movex\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "MoveArea",
+									"sid": 519507501115271,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "str(MoveArea.UID)&\"-\"&MoveArea.curMovement",
+										"property": "offsetX",
+										"end-value": "left(tokenat(currentMovement, 1, \" \"), 1) = \"~\"? Self.X + float(right(tokenat(currentMovement, 1, \" \"), len(tokenat(currentMovement, 1, \" \")) - 1)) : float(tokenat(currentMovement, 1, \" \"))",
+										"time": "max(float(tokenat(currentMovement, 2, \" \")), dt)",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 134797617873445,
+									"parameters": {
+										"variable": "mustwait",
+										"value": "tokencount(currentMovement, \" \") <= 3 | int(tokenat(currentMovement, 3, \" \"))? max(float(tokenat(currentMovement, 2, \" \")), dt) : 0"
+									}
+								}
+							],
+							"sid": 378927129597709
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 927553534624454,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"movey\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "MoveArea",
+									"sid": 780343338854218,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "str(MoveArea.UID)&\"-\"&MoveArea.curMovement",
+										"property": "offsetY",
+										"end-value": "left(tokenat(currentMovement, 1, \" \"), 1) = \"~\"? Self.Y + float(right(tokenat(currentMovement, 1, \" \"), len(tokenat(currentMovement, 1, \" \")) - 1)) : float(tokenat(currentMovement, 1, \" \"))",
+										"time": "max(float(tokenat(currentMovement, 2, \" \")), dt)",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 205646841094345,
+									"parameters": {
+										"variable": "mustwait",
+										"value": "tokencount(currentMovement, \" \") <= 3 | int(tokenat(currentMovement, 3, \" \"))? max(float(tokenat(currentMovement, 2, \" \")), dt) : 0"
+									}
+								}
+							],
+							"sid": 519865859937125
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 497395332647497,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"angle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-value",
+									"objectClass": "MoveArea",
+									"sid": 955829804219103,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"angle\"",
+										"start-value": "Self.Angle",
+										"end-value": "left(tokenat(currentMovement, 1, \" \"), 1) = \"~\"? Self.Angle + float(right(tokenat(currentMovement, 1, \" \"), len(tokenat(currentMovement, 1, \" \")) - 1)) : float(tokenat(currentMovement, 1, \" \"))",
+										"time": "max(float(tokenat(currentMovement, 2, \" \")), dt)",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 279562660846593,
+									"parameters": {
+										"variable": "mustwait",
+										"value": "tokencount(currentMovement, \" \") <= 3 | int(tokenat(currentMovement, 3, \" \"))? max(float(tokenat(currentMovement, 2, \" \")), dt) : 0"
+									}
+								}
+							],
+							"sid": 279936956607823
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 687427171579797,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"wait\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "MoveArea",
+									"sid": 698447372945838,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "float(tokenat(currentMovement, 1, \" \"))",
+										"type": "once",
+										"tag": "\"wait\""
+									}
+								}
+							],
+							"sid": 223314025638785
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 543053770705970,
+									"parameters": {
+										"first-value": "mustwait",
+										"comparison": 4,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "MoveArea",
+									"sid": 936722061193847,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "mustwait",
+										"type": "once",
+										"tag": "\"wait\""
+									}
+								}
+							],
+							"sid": 309098489510797
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 305925875797423,
+									"parameters": {
+										"first-value": "currentCommand",
+										"comparison": 0,
+										"second-value": "\"goto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "MoveArea",
+									"sid": 628107074764783,
+									"parameters": {
+										"instance-variable": "curMovement",
+										"value": "int(tokenat(currentMovement, 1, \" \")) - 1"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "MoveArea",
+									"sid": 853735617221041,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "dt/2",
+										"type": "once",
+										"tag": "\"wait\""
+									}
+								}
+							],
+							"sid": 550918686349221
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "MoveArea",
+									"sid": 705980931904953,
+									"parameters": {
+										"instance-variable": "curMovement",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 365321747995495
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "MoveArea",
+							"sid": 593700173578518,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"angle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "MoveArea",
+							"sid": 507573607228282,
+							"parameters": {
+								"angle": "Self.Tween.Value(\"angle\")"
+							}
+						}
+					],
+					"sid": 148846845518032
+				}
+			],
+			"sid": 735033247889468
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GroudPoundSolid",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 876786804892624,
+							"parameters": {
+								"instance-variable": "Pound"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 644180151804034,
+							"parameters": {
+								"object": "JumpThrough"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "JumpThrough",
+							"sid": 474384169779289,
+							"behaviorType": "Jumpthru",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 379202090905213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 649591706673475,
+							"parameters": {
+								"instance-variable": "Pound"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 958626282207226,
+							"parameters": {
+								"object": "GroundPoundSolid"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "GroundPoundSolid",
+							"sid": 936661808975356,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 990849593877826
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 111136838066011,
+							"parameters": {
+								"instance-variable": "Pound"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 191266465672623,
+							"parameters": {
+								"object": "DestructibleFloor"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "DestructibleFloor",
+							"sid": 937915639304271,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 521727816502535
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 907008687482807,
+							"parameters": {
+								"instance-variable": "Pound"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 350593372124281,
+							"parameters": {
+								"object": "DestructibleFloor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "DestructibleFloor",
+							"sid": 950529549813343
+						}
+					],
+					"sid": 326586950503988
+				}
+			],
+			"sid": 242348090363954
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RocketLauncher",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 725603426695444
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 628991736067900,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-object-to-target",
+							"objectClass": "RocketLauncher",
+							"sid": 259002420574403,
+							"behaviorType": "Turret",
+							"parameters": {
+								"target": "Collider"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Laser",
+							"sid": 169377689265485
+						}
+					],
+					"sid": 581401630699694
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 517387814279612,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "RocketLauncher",
+							"sid": 781835962042542,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Collider",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RocketLauncher",
+							"sid": 588762224759045,
+							"parameters": {
+								"instance-variable": "CanShoot"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "RocketLauncher",
+							"sid": 326013211259299,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 274126110553996
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Collider",
+							"sid": 180330618084599,
+							"parameters": {
+								"instance-variable": "Ghost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "RocketLauncher",
+							"sid": 605521506193872,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Collider",
+								"image-point": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "RocketLauncher",
+							"sid": 402024883476988,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 217563180490718
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "RocketLauncher",
+							"sid": 275080015275901
+						}
+					],
+					"actions": [
+						{
+							"id": "add-obstacle",
+							"objectClass": "RocketLauncher",
+							"sid": 757456252952168,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"obstacle": "Solids"
+							}
+						}
+					],
+					"sid": 648654694914223,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RocketLauncher",
+									"sid": 689595673990283,
+									"parameters": {
+										"instance-variable": "AlternateAiming"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-predictive-aim",
+									"objectClass": "RocketLauncher",
+									"sid": 408707489130740,
+									"behaviorType": "Turret",
+									"parameters": {
+										"predictive-aim": "enabled"
+									}
+								}
+							],
+							"sid": 536568826921058,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "RocketLauncher",
+											"sid": 631953637981258,
+											"parameters": {
+												"instance-variable": "Laser"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "RocketLauncher",
+											"sid": 574850135210927,
+											"parameters": {
+												"animation": "\"PredictiveLaser\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 596907241664563
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 611911382224931
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "RocketLauncher",
+											"sid": 129382749672828,
+											"parameters": {
+												"animation": "\"PredictiveDefault\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 595613838799985
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 182253886609310
+								}
+							],
+							"actions": [
+								{
+									"id": "set-predictive-aim",
+									"objectClass": "RocketLauncher",
+									"sid": 501863467651554,
+									"behaviorType": "Turret",
+									"parameters": {
+										"predictive-aim": "disabled"
+									}
+								}
+							],
+							"sid": 338240406576608,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "RocketLauncher",
+											"sid": 142774388592669,
+											"parameters": {
+												"instance-variable": "Laser"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "RocketLauncher",
+											"sid": 257721489974798,
+											"parameters": {
+												"animation": "\"Laser\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 630527739214222
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 509205559952252
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "RocketLauncher",
+											"sid": 412525367157457,
+											"parameters": {
+												"animation": "\"Default\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 974388301032203
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "RocketLauncher",
+							"sid": 569078079219237,
+							"behaviorType": "Turret"
+						}
+					],
+					"actions": [],
+					"sid": 181483128254176,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RocketLauncher",
+									"sid": 194574665142677,
+									"parameters": {
+										"instance-variable": "Laser"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 396923595944962,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "RocketLauncher",
+											"sid": 535259168307716,
+											"parameters": {
+												"instance-variable": "CanShoot"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RocketLauncher",
+											"sid": 549894693009100,
+											"parameters": {
+												"instance-variable": "CanShoot",
+												"value": "false"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "RocketLauncher",
+											"sid": 961322396112931,
+											"parameters": {
+												"object": "Laser",
+												"layer": "Self.LayerName",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Laser",
+											"sid": 472012381633493,
+											"parameters": {
+												"instance-variable": "active",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-height",
+											"objectClass": "Laser",
+											"sid": 534546201460613,
+											"parameters": {
+												"height": "30"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Laser",
+											"sid": 141262684235033,
+											"parameters": {
+												"animation": "\"Aiming\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "Laser",
+											"sid": 729016213687761,
+											"parameters": {
+												"where": "behind",
+												"object": "RocketLauncher"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Laser",
+											"sid": 223805980176374,
+											"parameters": {
+												"instance-variable": "parent",
+												"value": "RocketLauncher.UID"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Laser",
+											"sid": 815365083696007,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "Sprite2",
+											"sid": 467740928641791,
+											"parameters": {
+												"color": "rgbEx(100, 0, 0)"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Laser",
+											"sid": 935989888462314,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetHeight",
+												"end-value": "4",
+												"time": "1",
+												"ease": "easeoutbounce",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Laser",
+											"sid": 413922020708454,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "50",
+												"time": "1",
+												"ease": "easeoutquad",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 765093141415282,
+											"parameters": {
+												"seconds": "0.7"
+											}
+										},
+										{
+											"id": "shakecamera400",
+											"objectClass": "MagiCam",
+											"sid": 963603507743653,
+											"parameters": {
+												"name0": "\"Player\"",
+												"strength1": "30",
+												"max_deviation2": "20",
+												"max_zoom_deviation3": "0",
+												"build_length4": "0",
+												"drop_time5": "0",
+												"duration6": "0.3"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "RocketLauncher",
+											"sid": 856343256928729,
+											"behaviorType": "Turret",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Laser",
+											"sid": 588363735154866,
+											"parameters": {
+												"animation": "\"Locked\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 828927795519049,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "Intervalle",
+											"type": "number",
+											"initialValue": "30",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 763667656253285
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for",
+													"objectClass": "System",
+													"sid": 704598293581280,
+													"parameters": {
+														"name": "\"particles\"",
+														"start-index": "0",
+														"end-index": "Laser.Width/Intervalle"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 406048555789839,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "tarx",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": true,
+													"isConstant": false,
+													"sid": 174974675305339
+												},
+												{
+													"eventType": "variable",
+													"name": "tary",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": true,
+													"isConstant": false,
+													"sid": 166183762264080
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 828936843109742,
+															"parameters": {
+																"variable": "tarx",
+																"value": "lerp(Laser.X, Laser.X + Laser.Width * cos(Laser.Angle), unlerp(0, Laser.Width/Intervalle, loopindex))"
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 851287549240132,
+															"parameters": {
+																"variable": "tary",
+																"value": "lerp(Laser.Y, Laser.Y + Laser.Width * sin(Laser.Angle), unlerp(0, Laser.Width/Intervalle, loopindex))"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 760511039855699,
+															"parameters": {
+																"object-to-create": "Particles_LaserWarmup",
+																"layer": "0",
+																"x": "tarx",
+																"y": "tary",
+																"create-hierarchy": false
+															}
+														}
+													],
+													"sid": 278513951797373
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 863025793974537,
+													"parameters": {
+														"seconds": "0.5"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Laser",
+													"sid": 978114156570223,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetOpacity",
+														"end-value": "0",
+														"time": "0.2",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 593366447767180,
+													"parameters": {
+														"seconds": "0.3"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Laser",
+													"sid": 694894054886851,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetOpacity",
+														"end-value": "100",
+														"time": "0.1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Laser",
+													"sid": 749639843496736,
+													"parameters": {
+														"animation": "\"Shooting\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Laser",
+													"sid": 786834981889474,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetColor",
+														"end-value": "rgbEx(100,50,50)",
+														"time": "0.1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Laser",
+													"sid": 351097796297983,
+													"parameters": {
+														"instance-variable": "active",
+														"value": "true"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "Laser",
+													"sid": 368077183723628,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetHeight",
+														"end-value": "8",
+														"time": "0.1",
+														"ease": "easeoutbounce",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no"
+													}
+												},
+												{
+													"id": "shakecamera400",
+													"objectClass": "MagiCam",
+													"sid": 870785247514262,
+													"parameters": {
+														"name0": "\"Player\"",
+														"strength1": "30",
+														"max_deviation2": "50",
+														"max_zoom_deviation3": "0",
+														"build_length4": "0",
+														"drop_time5": "0.1",
+														"duration6": "0.7"
+													}
+												}
+											],
+											"sid": 490690550854450,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "cast-ray",
+															"objectClass": "RocketLauncher",
+															"sid": 477644943899770,
+															"behaviorType": "LineOfSight",
+															"parameters": {
+																"from-x": "Self.ImagePointX(1)",
+																"from-y": "Self.ImagePointY(1)",
+																"to-x": "Self.ImagePointX(1) + cos(Self.Angle) * Self.LineOfSight.Range",
+																"to-y": "Self.ImagePointY(1) + sin(Self.Angle) * Self.LineOfSight.Range",
+																"use-collision-cells": true
+															}
+														}
+													],
+													"sid": 593730897526096,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "ray-intersected",
+																	"objectClass": "RocketLauncher",
+																	"sid": 571247085386511,
+																	"behaviorType": "LineOfSight"
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 161526937812775,
+																	"parameters": {
+																		"object-to-create": "Particles_LaserHit",
+																		"layer": "0",
+																		"x": "RocketLauncher.LineOfSight.HitX",
+																		"y": "RocketLauncher.LineOfSight.HitY",
+																		"create-hierarchy": false
+																	}
+																},
+																{
+																	"id": "set-angle",
+																	"objectClass": "Particles_LaserHit",
+																	"sid": 234032241563211,
+																	"parameters": {
+																		"angle": "RocketLauncher.LineOfSight.NormalAngle"
+																	}
+																}
+															],
+															"sid": 815448777899214
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 830723783617200,
+															"parameters": {
+																"seconds": "0.1"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Laser",
+															"sid": 132900881703530,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetOpacity",
+																"end-value": "0",
+																"time": "0.5",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Laser",
+															"sid": 725118373755609,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetHeight",
+																"end-value": "0",
+																"time": "0.5",
+																"ease": "easeoutbounce",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no"
+															}
+														},
+														{
+															"id": "tween-one-property",
+															"objectClass": "Laser",
+															"sid": 853687374092804,
+															"behaviorType": "Tween",
+															"parameters": {
+																"tags": "\"\"",
+																"property": "offsetColor",
+																"end-value": "rgbEx(100,0,0)",
+																"time": "0.1",
+																"ease": "default",
+																"destroy-on-complete": "no",
+																"loop": "no",
+																"ping-pong": "no"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Laser",
+															"sid": 856856972136809,
+															"parameters": {
+																"instance-variable": "active",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Laser",
+															"sid": 177127224405641,
+															"parameters": {
+																"animation": "\"Aiming\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 579584500796999,
+															"parameters": {
+																"seconds": "0.1"
+															}
+														}
+													],
+													"sid": 841463713791708,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "for",
+																	"objectClass": "System",
+																	"sid": 884656053228809,
+																	"parameters": {
+																		"name": "\"particles\"",
+																		"start-index": "0",
+																		"end-index": "Laser.Width/Intervalle"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 629985513047880,
+																	"parameters": {
+																		"object-to-create": "Particles_LaserActive",
+																		"layer": "0",
+																		"x": "lerp(Laser.X, Laser.X + Laser.Width * cos(Laser.Angle), unlerp(0, Laser.Width/Intervalle, loopindex))",
+																		"y": "lerp(Laser.Y, Laser.Y + Laser.Width * sin(Laser.Angle), unlerp(0, Laser.Width/Intervalle, loopindex))",
+																		"create-hierarchy": false
+																	}
+																}
+															],
+															"sid": 872877926944324
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 760189865825070,
+																	"parameters": {
+																		"seconds": "0.3"
+																	}
+																},
+																{
+																	"id": "destroy",
+																	"objectClass": "Laser",
+																	"sid": 896249253682447
+																},
+																{
+																	"id": "set-enabled",
+																	"objectClass": "RocketLauncher",
+																	"sid": 701910370104956,
+																	"behaviorType": "Turret",
+																	"parameters": {
+																		"state": "enabled"
+																	}
+																},
+																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 928484112391924,
+																	"parameters": {
+																		"seconds": "RocketLauncher.RateOfFire"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "RocketLauncher",
+																	"sid": 410781214930540,
+																	"parameters": {
+																		"instance-variable": "CanShoot",
+																		"value": "true"
+																	}
+																}
+															],
+															"sid": 176515139502628
+														}
+													]
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 231299712901868
+								}
+							],
+							"actions": [],
+							"sid": 882457939902381,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "RocketLauncher",
+											"sid": 761922128096513,
+											"parameters": {
+												"instance-variable": "CanShoot"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "RocketLauncher",
+											"sid": 934078226275861,
+											"parameters": {
+												"instance-variable": "MultiBullets"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RocketLauncher",
+											"sid": 596266768112958,
+											"parameters": {
+												"instance-variable": "CanShoot",
+												"value": "false"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 710559499379451,
+											"parameters": {
+												"seconds": "0.2"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "RocketLauncher",
+											"sid": 654459988604108,
+											"parameters": {
+												"object": "Rocket",
+												"layer": "Self.LayerName",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"type": "script",
+											"script": "runtime.objects.Rocket.getFirstPickedInstance().instVars.Smart = runtime.objects.RocketLauncher.getFirstPickedInstance().instVars.Smart;"
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Rocket",
+											"sid": 464610607770604,
+											"parameters": {
+												"animation": "RocketLauncher.MultiBullets? \"MultiBullet\": RocketLauncher.Smart? \"Smart\" :\"Default\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Rocket",
+											"sid": 287432631650553,
+											"parameters": {
+												"instance-variable": "Parent",
+												"value": "RocketLauncher.UID"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Rocket",
+											"sid": 844063076886502,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "RocketLauncher.RocketSpeed <> -1? RocketLauncher.RocketSpeed : self.Bullet.Speed"
+											}
+										}
+									],
+									"sid": 241898375775264,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 116408293768351,
+							"parameters": {
+								"object": "Laser"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "RocketLauncher",
+							"sid": 454014344090553,
+							"parameters": {
+								"unique-id": "Laser.parent"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "cast-ray",
+							"objectClass": "RocketLauncher",
+							"sid": 176128238999468,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"from-x": "Self.ImagePointX(1)",
+								"from-y": "Self.ImagePointY(1)",
+								"to-x": "Self.ImagePointX(1) + cos(Self.Angle) * Self.LineOfSight.Range",
+								"to-y": "Self.ImagePointY(1) + sin(Self.Angle) * Self.LineOfSight.Range",
+								"use-collision-cells": true
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Laser",
+							"sid": 408939594620337,
+							"parameters": {
+								"object": "RocketLauncher",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Laser",
+							"sid": 762089817438907,
+							"parameters": {
+								"angle": "RocketLauncher.Angle"
+							}
+						}
+					],
+					"sid": 172110151969163,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "ray-intersected",
+									"objectClass": "RocketLauncher",
+									"sid": 963206848650905,
+									"behaviorType": "LineOfSight"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "Laser",
+									"sid": 627477218699355,
+									"parameters": {
+										"width": "RocketLauncher.LineOfSight.HitDistance"
+									}
+								}
+							],
+							"sid": 701280240707635
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 399404971278565
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "Laser",
+									"sid": 927455763843248,
+									"parameters": {
+										"width": "RocketLauncher.LineOfSight.Range"
+									}
+								}
+							],
+							"sid": 393526747674525
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 579999058471506,
+							"parameters": {
+								"object": "RocketLauncher"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 344300786009426,
+					"disabled": true
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Rocket",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 388490778290316
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Collider",
+									"sid": 904600893705683,
+									"parameters": {
+										"instance-variable": "Ghost"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Rocket",
+									"sid": 857593087430797,
+									"parameters": {
+										"animation": "\"MultiBullet\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 869638248099863,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Rocket",
+											"sid": 213135665178743,
+											"parameters": {
+												"instance-variable": "Smart"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "Portal",
+											"sid": 532133064001199,
+											"parameters": {
+												"unique-id": "Rocket.PortalUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "Rocket",
+											"sid": 685047970520464,
+											"parameters": {
+												"degrees": "3",
+												"x": "Portal.X",
+												"y": "Portal.Y"
+											}
+										}
+									],
+									"sid": 293594479552318,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Rocket",
+													"sid": 769656334917063,
+													"parameters": {
+														"object": "Portal"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 772027692014936,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "Target",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 905724304615112
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 841453932966337,
+															"parameters": {
+																"variable": "Target",
+																"value": "Portal.Target"
+															}
+														}
+													],
+													"sid": 741498649115820
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-all",
+															"objectClass": "System",
+															"sid": 418869650237193,
+															"parameters": {
+																"object": "Portal"
+															}
+														},
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 565856038764541,
+															"parameters": {
+																"object": "Portal",
+																"expression": "Portal.ID",
+																"comparison": 0,
+																"value": "Target"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position-to-another-object",
+															"objectClass": "Rocket",
+															"sid": 304734454589376,
+															"parameters": {
+																"object": "Portal",
+																"image-point-optional": "1"
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "Rocket",
+															"sid": 318284843342907,
+															"parameters": {
+																"angle": "Portal.Angle"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "Rocket",
+															"sid": 621082522265642,
+															"parameters": {
+																"instance-variable": "PortalUID",
+																"value": "-1"
+															}
+														}
+													],
+													"sid": 465394443062004
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 948726128638340
+										}
+									],
+									"actions": [
+										{
+											"id": "rotate-toward-position",
+											"objectClass": "Rocket",
+											"sid": 492887529496308,
+											"parameters": {
+												"degrees": "3",
+												"x": "Collider.X",
+												"y": "Collider.Y"
+											}
+										}
+									],
+									"sid": 336960609008293
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Rocket",
+									"sid": 220429532500408
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "RocketLauncher",
+									"sid": 470234656237827,
+									"parameters": {
+										"unique-id": "Rocket.Parent"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RocketLauncher",
+									"sid": 578375120434889,
+									"parameters": {
+										"instance-variable": "CanShoot",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 242990356166980
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Rocket",
+									"sid": 941340879682719,
+									"parameters": {
+										"object": "Solids"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Rocket",
+									"sid": 585751006023911
+								}
+							],
+							"sid": 975049006825006
+						}
+					],
+					"sid": 575650155980141
+				}
+			],
+			"sid": 867956520320554
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Coin",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 290959982618054
+						}
+					],
+					"actions": [],
+					"sid": 940927583971450,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 645951248633864,
+									"parameters": {
+										"object": "Coin"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 399208593995078,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "Coin",
+											"sid": 908177307058498,
+											"parameters": {
+												"opacity": "20"
+											}
+										}
+									],
+									"sid": 712195202166939
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Collider",
+							"sid": 720349583435080,
+							"parameters": {
+								"object": "Coin"
+							}
+						},
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "Coin",
+							"sid": 946482604818914,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 0,
+								"distance": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Coin",
+							"sid": 947736517954669,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Coin",
+							"sid": 112940484689525,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "270"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "Coin",
+							"sid": 329374712953997,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 568895904425117
+				}
+			],
+			"sid": 990451640931477
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Portal",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "JustCollided",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 566175294531988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "ray-intersected",
+							"objectClass": "Collider",
+							"sid": 418545910536002,
+							"behaviorType": "LineOfSight"
+						}
+					],
+					"actions": [],
+					"sid": 933589481341011
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Collider",
+							"sid": 355889751525965,
+							"parameters": {
+								"object": "Portal",
+								"offset-x": "Self.Platform.VectorX * dt",
+								"offset-y": "Self.Platform.VectorY * dt"
+							}
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "Collider",
+							"sid": 199214200687546,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Portal",
+								"image-point": "0"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "Collider",
+							"sid": 600788334596796,
+							"parameters": {
+								"which": "nearest",
+								"x": "Portal.X",
+								"y": "Portal.Y"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 895960023305062,
+							"parameters": {
+								"variable": "JustCollided",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 813664509604698,
+							"parameters": {
+								"first-value": "Functions.PortalExists(Portal.Target)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 267036565475141,
+							"parameters": {
+								"variable": "JustCollided",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Collider",
+							"sid": 393824572766211,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 520712428622576,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Target",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 497328891668924
+						},
+						{
+							"eventType": "variable",
+							"name": "InitAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 477521597470536
+						},
+						{
+							"eventType": "variable",
+							"name": "speed",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 302521863049998
+						},
+						{
+							"eventType": "variable",
+							"name": "newAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 600734005749924
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 987325884269686,
+									"parameters": {
+										"variable": "Target",
+										"value": "Portal.Target"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 433457504769939,
+									"parameters": {
+										"variable": "InitAngle",
+										"value": "Portal.Angle"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Rocket",
+									"sid": 506227106334621,
+									"parameters": {
+										"instance-variable": "PortalUID",
+										"value": "Portal.UID"
+									}
+								}
+							],
+							"sid": 758921628654325
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 398512139371253,
+									"parameters": {
+										"object": "Portal"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 895596111410269,
+									"parameters": {
+										"object": "Portal",
+										"expression": "Portal.ID",
+										"comparison": 0,
+										"value": "Target"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 119109777275943,
+									"parameters": {
+										"variable": "speed",
+										"value": "Portal.ForceSpeed? Portal.ForcedSpeed : Collider.Platform.Speed"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 912897193806467,
+									"parameters": {
+										"variable": "newAngle",
+										"value": "Portal.ForceAngle? Portal.ForcedAngle : Collider.Platform.MovingAngle + InitAngle+Portal.Angle + 180"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Collider",
+									"sid": 349994434856225,
+									"parameters": {
+										"x": "Portal.ImagePointX(1)",
+										"y": "Portal.ImagePointY(1)"
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "Collider",
+									"sid": 392328997249016,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-x": "cos(newAngle)*speed"
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "Collider",
+									"sid": 146518217139777,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "sin(newAngle)*speed"
+									}
+								}
+							],
+							"sid": 686270924108445
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 760450021046599,
+									"parameters": {
+										"seconds": "0.02"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Collider",
+									"sid": 152372575153389,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 495507609656744
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Collider",
+							"sid": 796654953810639,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"dead\""
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "PlayerRig",
+							"sid": 135401553701782,
+							"parameters": {
+								"object": "Portal",
+								"offset-x": "cos(Self.Bullet.AngleOfMotion) * Self.Bullet.Speed * dt",
+								"offset-y": "sin(Self.Bullet.AngleOfMotion) * Self.Bullet.Speed * dt"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "PlayerRig",
+							"sid": 634827534378050,
+							"disabled": true,
+							"parameters": {
+								"object": "Solids",
+								"offset-x": "cos(Self.Bullet.AngleOfMotion) * Self.Bullet.Speed * dt",
+								"offset-y": "sin(Self.Bullet.AngleOfMotion) * Self.Bullet.Speed * dt"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "PlayerRig",
+							"sid": 653107752782884,
+							"parameters": {
+								"which": "nearest",
+								"x": "Portal.X",
+								"y": "Portal.Y"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 216183960631771,
+							"parameters": {
+								"variable": "JustCollided",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 637800537070133,
+							"parameters": {
+								"first-value": "Functions.PortalExists(Portal.Target)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 853180126754972,
+							"parameters": {
+								"variable": "JustCollided",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Collider",
+							"sid": 161829795696467,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 938072069276762,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Target",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 840984905118782
+						},
+						{
+							"eventType": "variable",
+							"name": "InitAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 169976532013322
+						},
+						{
+							"eventType": "variable",
+							"name": "speed",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 643833662125539
+						},
+						{
+							"eventType": "variable",
+							"name": "newAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 991344877173377
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 449992734113091,
+									"parameters": {
+										"variable": "Target",
+										"value": "Portal.Target"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 753044649533117,
+									"parameters": {
+										"variable": "InitAngle",
+										"value": "Portal.Angle"
+									}
+								}
+							],
+							"sid": 816838679376588
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 151102765247069,
+									"parameters": {
+										"object": "Portal"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 677891954683639,
+									"parameters": {
+										"object": "Portal",
+										"expression": "Portal.ID",
+										"comparison": 0,
+										"value": "Target"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 440323801508293,
+									"parameters": {
+										"variable": "speed",
+										"value": "Portal.ForceSpeed? Portal.ForcedSpeed : PlayerRig.Bullet.Speed"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 753387989886508,
+									"parameters": {
+										"variable": "newAngle",
+										"value": "Portal.ForceAngle? Portal.ForcedAngle : -PlayerRig.Bullet.AngleOfMotion + InitAngle+Portal.Angle + 180"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "PlayerRig",
+									"sid": 910865530101278,
+									"parameters": {
+										"x": "Portal.ImagePointX(1)",
+										"y": "Portal.ImagePointY(1)"
+									}
+								},
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "PlayerRig",
+									"sid": 137767993035028,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "newAngle"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "PlayerRig",
+									"sid": 940295375498631,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "speed"
+									}
+								}
+							],
+							"sid": 511201581557150
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 722817361789651,
+									"parameters": {
+										"seconds": "0.02"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "PlayerRig",
+									"sid": 448871636927268,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
+							"sid": 976027404444245
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "collisions-enabled",
+							"objectClass": "Collider",
+							"sid": 667253878351896
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Collider",
+							"sid": 293411027858853,
+							"parameters": {
+								"object": "Portal"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 296035543707873,
+							"parameters": {
+								"variable": "JustCollided",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 466447737704390,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 122286764344964,
+							"parameters": {
+								"variable": "JustCollided",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 910985258546229
+				},
+				{
+					"functionName": "PortalExists",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Target",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 778094410640059
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 767077643826326,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 684429856994992,
+									"parameters": {
+										"object": "Portal",
+										"expression": "Portal.ID",
+										"comparison": 0,
+										"value": "Target"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 103532213548668,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 699066375547635
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 342337663580646
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 735647822090134,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 907639442425726
+						}
+					]
+				}
+			],
+			"sid": 269674408685541
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GravityZone",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "BaseGravity",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 416550862531596
+				},
+				{
+					"eventType": "variable",
+					"name": "gravityAngle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 838278822552094
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 437685135686957
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 673517440873318,
+							"parameters": {
+								"variable": "BaseGravity",
+								"value": "Collider.Platform.Gravity"
+							}
+						}
+					],
+					"sid": 504657490900519
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "Collider",
+							"sid": 719715866628944,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "BaseGravity"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "GravityZone",
+							"sid": 691690664314623,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 128624128454200,
+							"parameters": {
+								"variable": "gravityAngle",
+								"value": "90"
+							}
+						}
+					],
+					"sid": 267089152098061
+				},
+				{
+					"eventType": "variable",
+					"name": "gravityOverwritten",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 510168127386186
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-overlapping-point",
+							"objectClass": "System",
+							"sid": 290072851400039,
+							"parameters": {
+								"object": "GravityZone",
+								"x": "Collider.X",
+								"y": "Collider.Y"
+							}
+						},
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 601074265763469,
+							"parameters": {
+								"object": "GravityZone",
+								"expression": "GravityZone.ZIndex",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "GravityZone",
+							"sid": 529766007884207,
+							"parameters": {
+								"opacity": "50"
+							}
+						}
+					],
+					"sid": 557733158713274,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GravityZone",
+									"sid": 698563044001595,
+									"parameters": {
+										"instance-variable": "OverwriteAngle"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-gravity",
+									"objectClass": "Collider",
+									"sid": 334102674921760,
+									"disabled": true,
+									"behaviorType": "Platform",
+									"parameters": {
+										"angle": "GravityZone.ForcedAngle"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 196202753006745,
+									"parameters": {
+										"variable": "gravityAngle",
+										"value": "GravityZone.ForcedAngle"
+									}
+								}
+							],
+							"sid": 383764308548928
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 554738704278215
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-gravity",
+									"objectClass": "Collider",
+									"sid": 587486552385456,
+									"disabled": true,
+									"behaviorType": "Platform",
+									"parameters": {
+										"angle": "GravityZone.Angle + 90"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 142240474341291,
+									"parameters": {
+										"variable": "gravityAngle",
+										"value": "GravityZone.Angle + 90"
+									}
+								}
+							],
+							"sid": 630167689695574
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "GravityZone",
+									"sid": 149876680551865,
+									"parameters": {
+										"instance-variable": "OverWriteGravity"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-gravity",
+									"objectClass": "Collider",
+									"sid": 948537589013705,
+									"behaviorType": "Platform",
+									"parameters": {
+										"gravity": "GravityZone.ForcedGravity"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 582237837232815,
+									"parameters": {
+										"variable": "gravityOverwritten",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 348351310216794
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 391308303420540
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 800233870012742,
+									"parameters": {
+										"variable": "gravityOverwritten"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-gravity",
+									"objectClass": "Collider",
+									"sid": 593482208166597,
+									"behaviorType": "Platform",
+									"parameters": {
+										"gravity": "BaseGravity"
+									}
+								}
+							],
+							"sid": 738804275526320
+						}
+					]
+				},
+				{
+					"eventType": "variable",
+					"name": "startAngle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 869050466087301
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 331644329248900
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "Collider",
+							"sid": 896263749552981,
+							"parameters": {
+								"angle": "Self.Platform.GravityAngle - 90"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 555001677282380,
+							"parameters": {
+								"variable": "startAngle",
+								"value": "Collider.Platform.GravityAngle"
+							}
+						},
+						{
+							"id": "set-angle-of-gravity",
+							"objectClass": "Collider",
+							"sid": 474054806656459,
+							"behaviorType": "Platform",
+							"parameters": {
+								"angle": "anglelerp(Self.Platform.GravityAngle, gravityAngle, 0.2 * dt * 60)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Vector",
+							"sid": 422081086341589,
+							"parameters": {
+								"x": "Body.X",
+								"y": "Body.Y"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Vector",
+							"sid": 182595123839849,
+							"parameters": {
+								"width": "distance(0,0, Collider.Platform.VectorX, Collider.Platform.VectorY) * dt * 5",
+								"height": "10"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Vector",
+							"sid": 386348546902043,
+							"parameters": {
+								"angle": "angle(0,0, Collider.Platform.VectorX, Collider.Platform.VectorY) + Collider.Angle"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Vector",
+							"sid": 160581600201118,
+							"parameters": {
+								"opacity": "lerp(0,100, unlerp(0,20, Self.Width))"
+							}
+						}
+					],
+					"sid": 812259206955645,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 273514221508254,
+									"parameters": {
+										"first-value": "startAngle",
+										"comparison": 1,
+										"second-value": "Collider.Platform.GravityAngle"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 149596391574260,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "vx",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 927717529501226
+								},
+								{
+									"eventType": "variable",
+									"name": "vy",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 534816233354566
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 209632787777534,
+											"parameters": {
+												"variable": "vx",
+												"value": "Collider.Platform.VectorX"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 648351967866101,
+											"parameters": {
+												"variable": "vy",
+												"value": "Collider.Platform.VectorY"
+											}
+										},
+										{
+											"id": "set-vector-x",
+											"objectClass": "Collider",
+											"sid": 942791898198261,
+											"behaviorType": "Platform",
+											"parameters": {
+												"vector-x": "vx * cos(startAngle - Self.Platform.GravityAngle) - vy * sin(startAngle - Self.Platform.GravityAngle)"
+											}
+										},
+										{
+											"id": "set-vector-y",
+											"objectClass": "Collider",
+											"sid": 391867351587072,
+											"behaviorType": "Platform",
+											"parameters": {
+												"vector-y": "vy * cos(startAngle - Self.Platform.GravityAngle) + vx * sin(startAngle - Self.Platform.GravityAngle)"
+											}
+										},
+										{
+											"callFunction": "PlayerUpdateControls",
+											"sid": 482316455423457
+										}
+									],
+									"sid": 488593826887737
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 766431109369342
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "One way doors",
+			"description": "RealJumpThrough",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "RealJumpThrough",
+							"sid": 864949251091423
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 192938307574962,
+							"parameters": {
+								"first-value": "tickcount%10",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "These conditions are only there to save on performance, you can remove them if you don't need them"
+						}
+					],
+					"sid": 583176289964934,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 659893901797871,
+									"parameters": {
+										"object": "RealJumpThrough",
+										"expression": "anglediff(angle(Collider.X, Collider.Y, RealJumpThrough.X, RealJumpThrough.Y), RealJumpThrough.Angle - 90)",
+										"comparison": 4,
+										"value": "90"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Collider",
+									"sid": 118271090223203,
+									"parameters": {
+										"object": "RealJumpThrough"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "RealJumpThrough",
+									"sid": 727582055062732,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RealJumpThrough",
+									"sid": 510514038891243,
+									"parameters": {
+										"instance-variable": "enabled",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "RealJumpThrough",
+									"sid": 179792716738329,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 574419439544493
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Collider",
+									"sid": 295698689245366,
+									"parameters": {
+										"object": "RealJumpThrough"
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 601743894115499,
+									"parameters": {
+										"object": "RealJumpThrough",
+										"expression": "anglediff(angle(Collider.X, Collider.Y, RealJumpThrough.X, RealJumpThrough.Y), RealJumpThrough.Angle - 90)",
+										"comparison": 3,
+										"value": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "RealJumpThrough",
+									"sid": 959769095401884,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RealJumpThrough",
+									"sid": 486547431747751,
+									"parameters": {
+										"instance-variable": "enabled",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "RealJumpThrough",
+									"sid": 126863355483936,
+									"parameters": {
+										"opacity": "50"
+									}
+								}
+							],
+							"sid": 146939647034830,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 647808186493309
+		}
+	],
+	"sid": 832470370917680
+}

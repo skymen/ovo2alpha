@@ -1,0 +1,206 @@
+{
+	"name": "UI Elements",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "UIButtonOutline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 381,
+						"y": 339,
+						"width": 319,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Rectangle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3,
+					"instanceVariables": {
+						"Text": "PLAY",
+						"OutlineSize": 8,
+						"entry": false,
+						"onClick": "",
+						"noGamepad": false,
+						"tooltip": "",
+						"tooltipWidth": 0,
+						"tooltipHeight": 0,
+						"tooltipOffsetX": 0,
+						"tooltipOffsetY": 0,
+						"tooltipFollowMouse": false,
+						"hovering": false
+					},
+					"behaviors": {
+						"Button": {
+							"properties": {
+								"isenabled": "true",
+								"normal-frame": "",
+								"hover-frame": "",
+								"clicked-frame": "",
+								"disabled-frame": "",
+								"focus-frame": "",
+								"click-sound": "",
+								"hover-sound": "",
+								"focus-sound": "",
+								"click-animation": "none",
+								"hover-animation": "none",
+								"focus-animation": "none",
+								"normal-color": "",
+								"hover-color": "",
+								"clicked-color": "",
+								"disabled-color": "",
+								"focus-color": "",
+								"ignore-input": "auto"
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine2": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Sine3": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"GameObject": {
+							"properties": {
+								"name": "",
+								"parent-name": "",
+								"parent-layer": false
+							}
+						},
+						"Skin": {
+							"properties": {
+								"skin-base-tag": "",
+								"skin-tag": "",
+								"sub-skin-tag": "",
+								"sync-mode": "no sync",
+								"use-default-skin": "no",
+								"hide-default-skin": "yes",
+								"pin-image-point": 0,
+								"sync-z-order": "yes",
+								"size-sync-mode": "sync scale percentage"
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 381,
+						"y": 339,
+						"width": 299,
+						"height": 94,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 210195579649241,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 221268475170081,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 2560,
+	"height": 2560,
+	"unboundedScrolling": false,
+	"eventSheet": "UI Elements"
+}

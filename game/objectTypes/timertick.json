@@ -1,0 +1,38 @@
+{
+	"name": "TimerTick",
+	"plugin-id": "Spritefont2",
+	"sid": 625228144454282,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"sid": 551873317063810
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "skymen_Skymen_SpritefontDX",
+			"name": "SpritefontDeluxe",
+			"sid": 452648053134543
+		},
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 202454660304699
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 512,
+		"height": 1024,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "D:\\desktop\\SpriteFont_Retron2000_Regular_(48)_[1,1,1,1]_37x68.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 0,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "GameObjects",
+	"plugin-id": "Sprite",
+	"sid": 266572096688021,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 613628495357236
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Coin",
+		"ButtonTrigger",
+		"EndFlag",
+		"MoveArea",
+		"RocketLauncher",
+		"Spike",
+		"Spike2",
+		"Collider"
+	]
+}

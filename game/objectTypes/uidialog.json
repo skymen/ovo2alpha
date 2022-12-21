@@ -1,0 +1,78 @@
+{
+	"name": "UIDialog",
+	"plugin-id": "Sprite",
+	"sid": 220439290044702,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id",
+			"type": "string",
+			"desc": "",
+			"sid": 809989275315120
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobject",
+			"name": "GameObject",
+			"sid": 556909214325928
+		},
+		{
+			"behaviorId": "aekiro_dialog",
+			"name": "Dialog",
+			"sid": 605001902984739
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9874786,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 669477902179280,
+				"name": "Rectangle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4413622,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 823488748799273,
+				"name": "Circle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

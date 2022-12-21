@@ -1,0 +1,44 @@
+{
+	"name": "EndFlag",
+	"plugin-id": "Sprite",
+	"sid": 902073274804279,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "NextLevel",
+			"type": "string",
+			"desc": "",
+			"sid": 138134028503489
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 194,
+						"height": 398,
+						"originX": 0.525773,
+						"originY": 0.497487,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 764691740709197,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

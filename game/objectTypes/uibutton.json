@@ -1,0 +1,157 @@
+{
+	"name": "UIButton",
+	"plugin-id": "Sprite",
+	"sid": 507022508148891,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "entry",
+			"type": "boolean",
+			"desc": "",
+			"sid": 846395380466708
+		},
+		{
+			"name": "onClick",
+			"type": "string",
+			"desc": "",
+			"sid": 309318790617486
+		},
+		{
+			"name": "noGamepad",
+			"type": "boolean",
+			"desc": "",
+			"sid": 695754134210280
+		},
+		{
+			"name": "tooltip",
+			"type": "string",
+			"desc": "",
+			"sid": 400100669616293
+		},
+		{
+			"name": "tooltipWidth",
+			"type": "number",
+			"desc": "",
+			"sid": 855860621880389
+		},
+		{
+			"name": "tooltipHeight",
+			"type": "number",
+			"desc": "",
+			"sid": 327165954710929
+		},
+		{
+			"name": "tooltipOffsetX",
+			"type": "number",
+			"desc": "",
+			"sid": 714816229390926
+		},
+		{
+			"name": "tooltipOffsetY",
+			"type": "number",
+			"desc": "",
+			"sid": 115702409501196
+		},
+		{
+			"name": "tooltipFollowMouse",
+			"type": "boolean",
+			"desc": "",
+			"sid": 938777921229245
+		},
+		{
+			"name": "hovering",
+			"type": "boolean",
+			"desc": "",
+			"sid": 698843007921699
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_button",
+			"name": "Button",
+			"sid": 716653910936027
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 316261760699345
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 407691447241809
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine3",
+			"sid": 471238271060059
+		},
+		{
+			"behaviorId": "aekiro_gameobject",
+			"name": "GameObject",
+			"sid": 771035884556018
+		},
+		{
+			"behaviorId": "SkymenSkin",
+			"name": "Skin",
+			"sid": 583761809895040
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 162302520609062
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 14,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 545485013254871,
+				"name": "Rectangle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 205596,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 128844701922801,
+				"name": "Circle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

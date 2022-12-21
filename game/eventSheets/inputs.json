@@ -1,0 +1,791 @@
+{
+	"name": "Inputs",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Inputs",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Inputs > Listen",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 470857499390906
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Inputs",
+									"sid": 656581753546182,
+									"parameters": {
+										"instance-variable": "Listening"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "InputsSetInput",
+									"sid": 170754212181894,
+									"parameters": [
+										"Keyboard.LastKeyCode"
+									]
+								}
+							],
+							"sid": 382755113505235
+						}
+					],
+					"sid": 227265358218236
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Inputs > API",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "CharFromKey",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "string",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "key",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 958800227449848
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 624171961171169,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 190517983498516,
+											"parameters": {
+												"variable": "key",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 284720678311492,
+											"parameters": {
+												"value": "\"...\""
+											}
+										}
+									],
+									"sid": 402763768910184
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 573637303586947
+										}
+									],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 306356997601203,
+											"parameters": {
+												"value": "Keyboard.StringFromKeyCode(key)"
+											}
+										}
+									],
+									"sid": 346413712423470
+								}
+							]
+						},
+						{
+							"functionName": "ChangeKey",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "key",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 339442314874786
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Inputs",
+									"sid": 705329216218960,
+									"parameters": {
+										"instance-variable": "Listening"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "runtime.objects.Inputs.getFirstInstance().instVars[localVars.key] = -1;\nruntime.objects.Inputs.getFirstInstance().instVars.Listening = 1;\nruntime.callFunction(\"UpdateTexts\");"
+								}
+							],
+							"sid": 922801551065601
+						},
+						{
+							"functionName": "InputsSetInput",
+							"functionDescription": "Automatically converted from 'Inputs > Set Input'",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "Value",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Automatically converted from 'Inputs > Set Input' parameter 1",
+									"sid": 358324279100542
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Inputs",
+									"sid": 639834617992056,
+									"parameters": {
+										"instance-variable": "Listening",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 789006620384034,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Inputs",
+											"sid": 588600483354587,
+											"parameters": {
+												"instance-variable": "LeftInput",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inputs",
+											"sid": 217353599395429,
+											"parameters": {
+												"instance-variable": "LeftInput",
+												"value": "Value"
+											}
+										}
+									],
+									"sid": 716140286604558
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Inputs",
+											"sid": 269359974744976,
+											"parameters": {
+												"instance-variable": "UpInput",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inputs",
+											"sid": 323100672383558,
+											"parameters": {
+												"instance-variable": "UpInput",
+												"value": "Value"
+											}
+										}
+									],
+									"sid": 802254760353788
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Inputs",
+											"sid": 949369317181246,
+											"parameters": {
+												"instance-variable": "RightInput",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inputs",
+											"sid": 321141716287144,
+											"parameters": {
+												"instance-variable": "RightInput",
+												"value": "Value"
+											}
+										}
+									],
+									"sid": 631556674023994
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Inputs",
+											"sid": 938876712864968,
+											"parameters": {
+												"instance-variable": "DownInput",
+												"comparison": 0,
+												"value": "-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Inputs",
+											"sid": 436251573028339,
+											"parameters": {
+												"instance-variable": "DownInput",
+												"value": "Value"
+											}
+										}
+									],
+									"sid": 396254073249602
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "UpdateTexts",
+											"sid": 889351651099955
+										}
+									],
+									"sid": 355188760553382
+								}
+							]
+						}
+					],
+					"sid": 479917278809175
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 801999660862837,
+							"parameters": {
+								"first-value": "timescale",
+								"comparison": 1,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Inputs",
+							"sid": 612210808934213,
+							"parameters": {
+								"instance-variable": "Listening"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 160274755642354,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-pressed",
+									"objectClass": "Keyboard",
+									"sid": 350941835775692,
+									"parameters": {
+										"keycode": "Inputs.UpInput"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 931512396641265,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 982860523069362,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 412898623913242,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 424984829683786,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-mobile-device",
+													"objectClass": "System",
+													"sid": 485120026311497
+												}
+											],
+											"actions": [
+												{
+													"id": "vibrate",
+													"objectClass": "Browser",
+													"sid": 575225797113445,
+													"parameters": {
+														"pattern": "VibratePtrn"
+													}
+												},
+												{
+													"callFunction": "ControlsBuffer",
+													"sid": 265831233357528,
+													"parameters": [
+														"\"Jump\"",
+														"10"
+													]
+												}
+											],
+											"sid": 813276100864362
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 416617541165116
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "ControlsBuffer",
+													"sid": 428632890830230,
+													"parameters": [
+														"\"Jump\"",
+														"5"
+													]
+												}
+											],
+											"sid": 212102839472747
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-pressed",
+									"objectClass": "Keyboard",
+									"sid": 130708852404356,
+									"parameters": {
+										"keycode": "Inputs.DownInput"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 847472024384194,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-b"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 972615702054064,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setdown6",
+									"objectClass": "InputManager",
+									"sid": 465404213670184,
+									"parameters": {
+										"input0": "\"Down\""
+									}
+								}
+							],
+							"sid": 434135608664859,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-released",
+									"objectClass": "Keyboard",
+									"sid": 475878094952936,
+									"parameters": {
+										"keycode": "Inputs.DownInput"
+									}
+								},
+								{
+									"id": "on-button-released",
+									"objectClass": "Gamepad",
+									"sid": 400922038156519,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-b"
+									}
+								},
+								{
+									"id": "on-button-released",
+									"objectClass": "Gamepad",
+									"sid": 753227115796877,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-x"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setup5",
+									"objectClass": "InputManager",
+									"sid": 700784851796902,
+									"parameters": {
+										"input0": "\"Down\""
+									}
+								}
+							],
+							"sid": 912573179123940,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-pressed",
+									"objectClass": "Keyboard",
+									"sid": 750240850311716,
+									"parameters": {
+										"keycode": "Inputs.LeftInput"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 774238616216890,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setdown6",
+									"objectClass": "InputManager",
+									"sid": 188116877612522,
+									"parameters": {
+										"input0": "\"Left\""
+									}
+								}
+							],
+							"sid": 531473183096970,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-released",
+									"objectClass": "Keyboard",
+									"sid": 855370832022694,
+									"parameters": {
+										"keycode": "Inputs.LeftInput"
+									}
+								},
+								{
+									"id": "on-button-released",
+									"objectClass": "Gamepad",
+									"sid": 339058893590878,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setup5",
+									"objectClass": "InputManager",
+									"sid": 994557657266091,
+									"parameters": {
+										"input0": "\"Left\""
+									}
+								}
+							],
+							"sid": 766024998995156,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 160002187321647,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 342270283737734
+								}
+							],
+							"actions": [
+								{
+									"id": "setdown6",
+									"objectClass": "InputManager",
+									"sid": 466501548461921,
+									"parameters": {
+										"input0": "\"Left\""
+									}
+								}
+							],
+							"sid": 568634372310163
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 499806364580892,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 5,
+										"value": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 885982619282662
+								}
+							],
+							"actions": [
+								{
+									"id": "setup5",
+									"objectClass": "InputManager",
+									"sid": 992180278954536,
+									"parameters": {
+										"input0": "\"Left\""
+									}
+								}
+							],
+							"sid": 459679819896279
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-pressed",
+									"objectClass": "Keyboard",
+									"sid": 342644419096372,
+									"parameters": {
+										"keycode": "Inputs.RightInput"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 683871404525535,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-right"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setdown6",
+									"objectClass": "InputManager",
+									"sid": 448993779132467,
+									"parameters": {
+										"input0": "\"Right\""
+									}
+								}
+							],
+							"sid": 995688738710180,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-code-released",
+									"objectClass": "Keyboard",
+									"sid": 889085151129684,
+									"parameters": {
+										"keycode": "Inputs.RightInput"
+									}
+								},
+								{
+									"id": "on-button-released",
+									"objectClass": "Gamepad",
+									"sid": 980143177505987,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-right"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "setup5",
+									"objectClass": "InputManager",
+									"sid": 412196875442068,
+									"parameters": {
+										"input0": "\"Right\""
+									}
+								}
+							],
+							"sid": 489327567097128,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 479869936504683,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 175366121741026
+								}
+							],
+							"actions": [
+								{
+									"id": "setdown6",
+									"objectClass": "InputManager",
+									"sid": 128388453615781,
+									"parameters": {
+										"input0": "\"Right\""
+									}
+								}
+							],
+							"sid": 123790213502405
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 826422213179378,
+									"parameters": {
+										"gamepad": "0",
+										"axis": "left-analog-x-axis",
+										"comparison": 3,
+										"value": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 483052271965496
+								}
+							],
+							"actions": [
+								{
+									"id": "setup5",
+									"objectClass": "InputManager",
+									"sid": 402901103243946,
+									"parameters": {
+										"input0": "\"Right\""
+									}
+								}
+							],
+							"sid": 505270128114964
+						}
+					]
+				}
+			],
+			"sid": 676187960268572
+		}
+	],
+	"sid": 965732853619122
+}

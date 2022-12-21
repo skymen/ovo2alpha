@@ -1,0 +1,26 @@
+{
+	"name": "RealJumpThrough",
+	"plugin-id": "TiledBg",
+	"sid": 631270691679578,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 564446406251296
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 16,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 64,
+		"useCollisionPoly": true
+	}
+}

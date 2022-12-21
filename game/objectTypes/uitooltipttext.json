@@ -1,0 +1,41 @@
+{
+	"name": "UITooltiptText",
+	"plugin-id": "Spritefont2",
+	"sid": 929520969139565,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "skymen_Skymen_SpritefontDX",
+			"name": "SpritefontDeluxe",
+			"sid": 672125607297260
+		},
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 502830692289932
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 236544256808505
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 531052375416281
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 512,
+		"height": 1024,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "D:\\desktop\\SpriteFont_Retron2000_Regular_(48)_[1,1,1,1]_37x68.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 1367809,
+		"useCollisionPoly": true
+	}
+}

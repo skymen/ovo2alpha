@@ -1,0 +1,93 @@
+{
+	"name": "Portal",
+	"plugin-id": "Sprite",
+	"sid": 544011280287431,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"sid": 367673615391827
+		},
+		{
+			"name": "Target",
+			"type": "number",
+			"desc": "",
+			"sid": 888700237478583
+		},
+		{
+			"name": "ForceAngle",
+			"type": "boolean",
+			"desc": "",
+			"sid": 764929555938459
+		},
+		{
+			"name": "ForcedAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 558118941758308
+		},
+		{
+			"name": "ForceSpeed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 989018923531553
+		},
+		{
+			"name": "ForcedSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 901452989945077
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 12,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Sortie",
+								"x": 3,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 326537150926620,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

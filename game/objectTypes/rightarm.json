@@ -1,0 +1,44 @@
+{
+	"name": "RightArm",
+	"plugin-id": "Sprite",
+	"sid": 669699359164824,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 16,
+						"originX": 1,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 24,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 1,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 149161089714120,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

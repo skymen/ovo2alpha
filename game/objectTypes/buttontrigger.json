@@ -1,0 +1,128 @@
+{
+	"name": "ButtonTrigger",
+	"plugin-id": "Sprite",
+	"sid": 152495212757238,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"sid": 302308567419264
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"sid": 180823996714860
+		},
+		{
+			"name": "PersistAfterDeath",
+			"type": "boolean",
+			"desc": "",
+			"sid": 341546762191057
+		},
+		{
+			"name": "InitX",
+			"type": "number",
+			"desc": "",
+			"sid": 855261174621340
+		},
+		{
+			"name": "InitY",
+			"type": "number",
+			"desc": "",
+			"sid": 637869213203805
+		},
+		{
+			"name": "InitAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 807729422012839
+		},
+		{
+			"name": "Repeatable",
+			"type": "boolean",
+			"desc": "Sets if the button can be activated multiple times",
+			"sid": 752320249631383
+		},
+		{
+			"name": "OnActivate",
+			"type": "string",
+			"desc": "The code to run when a button is hit",
+			"sid": 388044659857909
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Persist",
+			"name": "Persist",
+			"sid": 171125379681565
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 40,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 41,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 131685430022184,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

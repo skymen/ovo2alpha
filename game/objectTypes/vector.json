@@ -1,0 +1,32 @@
+{
+	"name": "Vector",
+	"plugin-id": "NinePatch",
+	"sid": 574111780700918,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 11,
+		"originX": 0.5,
+		"originY": 0.45454545454545453,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 71,
+		"collisionPoly": {
+			"points": [
+				0,
+				0,
+				1,
+				0,
+				1,
+				0.9090909090909091,
+				0,
+				0.9090909090909091
+			]
+		},
+		"useCollisionPoly": true
+	}
+}

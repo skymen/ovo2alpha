@@ -1,0 +1,33 @@
+{
+	"name": "Enemies",
+	"plugin-id": "Sprite",
+	"sid": 517657302284742,
+	"instanceVariables": [
+		{
+			"name": "destroyOnTouch",
+			"type": "boolean",
+			"desc": "",
+			"sid": 476852215823056
+		},
+		{
+			"name": "active",
+			"type": "boolean",
+			"desc": "",
+			"sid": 176399347489732
+		},
+		{
+			"name": "distToPlayer",
+			"type": "number",
+			"desc": "",
+			"sid": 630289745905076
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Rocket",
+		"Spike2",
+		"Spike",
+		"Laser"
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "PlayerRig",
+	"plugin-id": "Sprite",
+	"sid": 216413207988818,
+	"instanceVariables": [
+		{
+			"name": "Zordering",
+			"type": "number",
+			"desc": "",
+			"sid": 847556837056227
+		},
+		{
+			"name": "OX",
+			"type": "number",
+			"desc": "",
+			"sid": 193716992848770
+		},
+		{
+			"name": "OY",
+			"type": "number",
+			"desc": "",
+			"sid": 531917423876062
+		},
+		{
+			"name": "an",
+			"type": "number",
+			"desc": "",
+			"sid": 917481870875719
+		},
+		{
+			"name": "dist",
+			"type": "number",
+			"desc": "",
+			"sid": 590689168236746
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 757005484684714
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 169356397734787
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 213607194455875
+		},
+		{
+			"behaviorId": "SkymenSkin",
+			"name": "Skin",
+			"sid": 919374580583633
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"LeftFoot",
+		"LeftLeg",
+		"RightArm",
+		"RightHand",
+		"RightLeg",
+		"RightFoot",
+		"LeftHand",
+		"LeftArm",
+		"Head",
+		"Body"
+	]
+}

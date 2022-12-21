@@ -1,0 +1,41 @@
+{
+	"name": "UIText",
+	"plugin-id": "Spritefont2",
+	"sid": 866370430803976,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "skymen_Skymen_SpritefontDX",
+			"name": "SpritefontDeluxe",
+			"sid": 103805322749645
+		},
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 334258766612131
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 751619611697805
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 981584069819188
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 512,
+		"height": 1024,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "D:\\desktop\\SpriteFont_Retron2000_Regular_(48)_[1,1,1,1]_37x68.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9,
+		"useCollisionPoly": true
+	}
+}

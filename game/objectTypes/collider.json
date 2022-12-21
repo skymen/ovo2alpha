@@ -1,0 +1,378 @@
+{
+	"name": "Collider",
+	"plugin-id": "Sprite",
+	"sid": 311463419822641,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "State",
+			"type": "string",
+			"desc": "",
+			"sid": 358325539946631
+		},
+		{
+			"name": "Walljump",
+			"type": "boolean",
+			"desc": "",
+			"sid": 356782072416848
+		},
+		{
+			"name": "HasSmallWalljumped",
+			"type": "boolean",
+			"desc": "",
+			"sid": 952917189100954
+		},
+		{
+			"name": "Side",
+			"type": "number",
+			"desc": "",
+			"sid": 209408651029031
+		},
+		{
+			"name": "CanSlide",
+			"type": "boolean",
+			"desc": "",
+			"sid": 356973731332670
+		},
+		{
+			"name": "Sliding",
+			"type": "boolean",
+			"desc": "",
+			"sid": 620002182012554
+		},
+		{
+			"name": "SlideTime",
+			"type": "number",
+			"desc": "",
+			"sid": 342498379673966
+		},
+		{
+			"name": "SlideRefresh",
+			"type": "number",
+			"desc": "",
+			"sid": 639926130513740
+		},
+		{
+			"name": "Plunge",
+			"type": "boolean",
+			"desc": "",
+			"sid": 671682453127985
+		},
+		{
+			"name": "Pound",
+			"type": "boolean",
+			"desc": "",
+			"sid": 155241724915410
+		},
+		{
+			"name": "CanPoundLongJump",
+			"type": "boolean",
+			"desc": "",
+			"sid": 162192034680922
+		},
+		{
+			"name": "PoundLongJump",
+			"type": "boolean",
+			"desc": "",
+			"sid": 435073651399886
+		},
+		{
+			"name": "Stun",
+			"type": "boolean",
+			"desc": "",
+			"sid": 381696736049912
+		},
+		{
+			"name": "LongJump",
+			"type": "boolean",
+			"desc": "",
+			"sid": 695219187985458
+		},
+		{
+			"name": "WallRun",
+			"type": "boolean",
+			"desc": "",
+			"sid": 445741842409593
+		},
+		{
+			"name": "CanWallRun",
+			"type": "boolean",
+			"desc": "",
+			"sid": 530722754506124
+		},
+		{
+			"name": "WallRunTime",
+			"type": "number",
+			"desc": "",
+			"sid": 934558042230878
+		},
+		{
+			"name": "Falling",
+			"type": "boolean",
+			"desc": "",
+			"sid": 530651170439909
+		},
+		{
+			"name": "Skin",
+			"type": "string",
+			"desc": "",
+			"sid": 692537509978235
+		},
+		{
+			"name": "HitBuffer",
+			"type": "number",
+			"desc": "",
+			"sid": 648058321941005
+		},
+		{
+			"name": "HitBufferAway",
+			"type": "number",
+			"desc": "",
+			"sid": 375140002861553
+		},
+		{
+			"name": "HitBufferCount",
+			"type": "number",
+			"desc": "Don't touch, used for HitBuffer",
+			"sid": 949176827202195
+		},
+		{
+			"name": "Slipping",
+			"type": "boolean",
+			"desc": "",
+			"sid": 542303258903702
+		},
+		{
+			"name": "Ghost",
+			"type": "boolean",
+			"desc": "",
+			"sid": 547747994506135
+		},
+		{
+			"name": "GhostData",
+			"type": "string",
+			"desc": "",
+			"sid": 764404748336026
+		},
+		{
+			"name": "ColBuffer",
+			"type": "number",
+			"desc": "",
+			"sid": 454857469222575
+		},
+		{
+			"name": "ColBufferCount",
+			"type": "number",
+			"desc": "",
+			"sid": 361054051050577
+		},
+		{
+			"name": "NormalAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 134513652162210
+		},
+		{
+			"name": "MaxSpeed",
+			"type": "number",
+			"desc": "",
+			"sid": 593545337814855
+		},
+		{
+			"name": "TopCrushSize",
+			"type": "number",
+			"desc": "",
+			"sid": 363847779798559
+		},
+		{
+			"name": "RightCrushSize",
+			"type": "number",
+			"desc": "",
+			"sid": 349666317674524
+		},
+		{
+			"name": "LeftCrushSize",
+			"type": "number",
+			"desc": "",
+			"sid": 347823558597866
+		},
+		{
+			"name": "BottomCrushSize",
+			"type": "number",
+			"desc": "",
+			"sid": 901974215355518
+		},
+		{
+			"name": "wavebounce",
+			"type": "boolean",
+			"desc": "",
+			"sid": 899017714269428
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 981203010392786
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 629376222541718
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 952016257555090
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 17,
+						"collisionPoly": {
+							"points": [
+								0.75,
+								0.125,
+								0.25,
+								0.125,
+								0.25,
+								1,
+								0.75,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Bottom",
+								"x": 0.5,
+								"y": 1.328125
+							},
+							{
+								"name": "BodyPos",
+								"x": 0.5,
+								"y": 0.625
+							},
+							{
+								"name": "Right",
+								"x": 1.8125,
+								"y": 0.953125
+							},
+							{
+								"name": "Left",
+								"x": -0.8125,
+								"y": 0.984375
+							},
+							{
+								"name": "leftRay",
+								"x": 0.75,
+								"y": 0.5
+							},
+							{
+								"name": "rightRay",
+								"x": 0.25,
+								"y": 0.5
+							},
+							{
+								"name": "bottomLeftRay",
+								"x": 0.75,
+								"y": 1.328125
+							},
+							{
+								"name": "bottomRightRay",
+								"x": 0.25,
+								"y": 1.328125
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 128,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 20,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.25,
+								0.875,
+								0.2578125,
+								0.875,
+								1,
+								0.375,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Bottom",
+								"x": 0.6328125,
+								"y": 1.5
+							},
+							{
+								"name": "BodyPos",
+								"x": 0.5,
+								"y": 0.875
+							},
+							{
+								"name": "Right",
+								"x": 1.4375,
+								"y": 0.875
+							},
+							{
+								"name": "Left",
+								"x": -0.40625,
+								"y": 0.96875
+							},
+							{
+								"name": "leftRay",
+								"x": 0.875,
+								"y": 0.5
+							},
+							{
+								"name": "rightRay",
+								"x": 0.390625,
+								"y": 0.5
+							},
+							{
+								"name": "bottomLeftRay",
+								"x": 0.875,
+								"y": 1.5
+							},
+							{
+								"name": "bottomRightRay",
+								"x": 0.390625,
+								"y": 1.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 631402986113030,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

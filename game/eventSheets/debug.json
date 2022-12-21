@@ -1,0 +1,1695 @@
+{
+	"name": "Debug",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 140094929942013,
+							"parameters": {
+								"first-value": "Collider.Count ",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 968390986852768,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 523128698354019,
+									"parameters": {
+										"instance-variable": "Record"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 465263727385883,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 595033001132983
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "RecordedPlayer",
+											"sid": 522793774931129,
+											"parameters": {
+												"width": "0",
+												"height": "6",
+												"depth": "1"
+											}
+										}
+									],
+									"sid": 836813019316588
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Collider",
+											"sid": 838114496455209,
+											"parameters": {
+												"instance-variable": "Ghost"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 128711266759060,
+											"parameters": {
+												"first-value": "timescale",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "push",
+											"objectClass": "RecordedPlayer",
+											"sid": 230955665982162,
+											"parameters": {
+												"where": "back",
+												"value": "0",
+												"axis": "x"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 567443753053355,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "0",
+												"value": "Collider.X"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 402712361600434,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "1",
+												"value": "Collider.Y"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 446540394858916,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "2",
+												"value": "Collider.Angle"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 312583368435270,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "3",
+												"value": "Collider.State"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 198311251365889,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "4",
+												"value": "Collider.AnimationFrame"
+											}
+										},
+										{
+											"id": "set-at-xy",
+											"objectClass": "RecordedPlayer",
+											"sid": 317670405074567,
+											"parameters": {
+												"x": "RecordedPlayer.Width-1",
+												"y": "5",
+												"value": "Collider.Side"
+											}
+										}
+									],
+									"sid": 997477160012886,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-in-preview",
+													"objectClass": "System",
+													"sid": 969235395083730
+												}
+											],
+											"actions": [],
+											"sid": 476151856780376,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Collider",
+															"sid": 596883396941828,
+															"parameters": {
+																"object": "EndFlag"
+															}
+														},
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 313354380324345,
+															"parameters": {
+																"key": 114
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "log",
+															"objectClass": "Browser",
+															"sid": 367708620294393,
+															"parameters": {
+																"type": "log",
+																"message": "RecordedPlayer.AsJSON"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 679458132418732,
+															"parameters": {
+																"seconds": "0"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Globals",
+															"sid": 275881202568990,
+															"parameters": {
+																"instance-variable": "Record",
+																"value": "false"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 593331976961725,
+															"parameters": {
+																"object-to-create": "Collider",
+																"layer": "\"Layer 0\"",
+																"x": "0",
+																"y": "0",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Collider",
+															"sid": 789770522672478,
+															"parameters": {
+																"instance-variable": "Ghost",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "Collider",
+															"sid": 713826784740822,
+															"parameters": {
+																"instance-variable": "GhostData",
+																"value": "RecordedPlayer.AsJSON"
+															}
+														}
+													],
+													"sid": 683945146479809,
+													"isOrBlock": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 895695334588456
+								}
+							],
+							"actions": [],
+							"sid": 929107634642297,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 613919371770091,
+											"parameters": {
+												"key": 114
+											}
+										},
+										{
+											"id": "is-in-preview",
+											"objectClass": "System",
+											"sid": 447625835916127
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Globals",
+											"sid": 255670758834618,
+											"parameters": {
+												"instance-variable": "Record",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 928152221849634,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Collider",
+													"sid": 985998705551332,
+													"parameters": {
+														"instance-variable": "Ghost"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Collider",
+													"sid": 254684034651969
+												}
+											],
+											"sid": 895087259007104
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 545634744557694,
+											"parameters": {
+												"key": 112
+											}
+										},
+										{
+											"id": "is-in-preview",
+											"objectClass": "System",
+											"sid": 778047475601132
+										}
+									],
+									"actions": [
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 629673886045010,
+											"parameters": {
+												"time-scale": "timescale = 1 ? 0.2 : 1"
+											}
+										}
+									],
+									"sid": 462748209152070,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 468096905160999,
+											"parameters": {
+												"key": 116
+											}
+										},
+										{
+											"id": "is-in-preview",
+											"objectClass": "System",
+											"sid": 961977940550628
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "TakeFullLayoutScreenshot",
+											"sid": 202523892561647
+										}
+									],
+									"sid": 954753456866849
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 872548271263115
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 616480142472925,
+											"parameters": {
+												"first-value": "LayoutNameHolder.Count",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 548438847553174,
+											"parameters": {
+												"first-value": "LayoutNameHolder.GhostData",
+												"comparison": 1,
+												"second-value": "\"\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 137105443831553,
+											"parameters": {
+												"object-to-create": "Collider",
+												"layer": "\"Layer 0\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Collider",
+											"sid": 762790980543320,
+											"parameters": {
+												"instance-variable": "Ghost",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Collider",
+											"sid": 218760852765968,
+											"parameters": {
+												"instance-variable": "GhostData",
+												"value": "LayoutNameHolder.GhostData"
+											}
+										},
+										{
+											"id": "load",
+											"objectClass": "RecordedPlayer",
+											"sid": 830222379800515,
+											"parameters": {
+												"json": "LayoutNameHolder.GhostData"
+											}
+										}
+									],
+									"sid": 631603640557931,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Globals",
+													"sid": 198807107114545,
+													"parameters": {
+														"instance-variable": "DebugMode"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Collider",
+													"sid": 245592527654131,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 181401185845229
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 894771672717108
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Collider",
+													"sid": 317500703190727,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 370362555424447
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 826350521501003
+										}
+									],
+									"actions": [],
+									"sid": 212678010884831
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 578133602405920
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "debugSprite",
+							"sid": 856405555688810,
+							"parameters": {
+								"frame-number": "Self.IID"
+							}
+						}
+					],
+					"sid": 527579332202839,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 599624576805849,
+									"parameters": {
+										"first-value": "debugSprite.Count",
+										"comparison": 2,
+										"second-value": "3"
+									}
+								},
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 170200520229140,
+									"parameters": {
+										"count": "3 - debugSprite.Count"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 877099294087943,
+									"parameters": {
+										"object-to-create": "debugSprite",
+										"layer": "Collider.LayerName",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "debugSprite",
+									"sid": 962631369446997,
+									"parameters": {
+										"frame-number": "Self.IID"
+									}
+								}
+							],
+							"sid": 362574982146124,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Globals",
+											"sid": 607579238275664,
+											"parameters": {
+												"instance-variable": "DebugMode"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "debugSprite",
+											"sid": 895450140014948,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 226227046804310
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 449527942373677
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "debugSprite",
+											"sid": 150803515918020,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 554110713581939
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 127698953117276,
+									"parameters": {
+										"first-value": "Vector.Count",
+										"comparison": 2,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 934885109444696,
+									"parameters": {
+										"object-to-create": "Vector",
+										"layer": "Collider.LayerName",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 179173040718925,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Globals",
+											"sid": 961428131190994,
+											"parameters": {
+												"instance-variable": "DebugMode"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Vector",
+											"sid": 926256695269782,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 883367873083154
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 748418922482276
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "Vector",
+											"sid": 437395582311788,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 989716900795517
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 125142662317683,
+									"parameters": {
+										"instance-variable": "DebugMode"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Collider",
+									"sid": 615575808589794,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MoveArea",
+									"sid": 103514425091788,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "debugSprite",
+									"sid": 312073819255339,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "GravityZone",
+									"sid": 284410740990387,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Vector",
+									"sid": 156535063464359,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 741196514065945
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 864910687924085
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Collider",
+									"sid": 157289869392062,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MoveArea",
+									"sid": 983085675462277,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "debugSprite",
+									"sid": 694449579232242,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "GravityZone",
+									"sid": 591769102437852,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Vector",
+									"sid": 873762348361972,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 807968600530471
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 712653987176864,
+									"parameters": {
+										"instance-variable": "RandomSkin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Globals",
+									"sid": 616901215197452,
+									"parameters": {
+										"instance-variable": "Skin",
+										"value": "SkinGroup.RandomSkin"
+									}
+								}
+							],
+							"sid": 318949084191785
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 986963966407555
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Globals",
+							"sid": 573142818588572,
+							"parameters": {
+								"instance-variable": "LastLayout",
+								"value": "LayoutName"
+							}
+						}
+					],
+					"sid": 383384808710855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 354755354969379,
+							"parameters": {
+								"key": 113
+							}
+						},
+						{
+							"id": "is-in-preview",
+							"objectClass": "System",
+							"sid": 618408807595664
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Globals",
+							"sid": 738921584373947,
+							"parameters": {
+								"instance-variable": "DebugMode"
+							}
+						}
+					],
+					"sid": 443680493373204,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 750670626201932,
+									"parameters": {
+										"instance-variable": "DebugMode"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Collider",
+									"sid": 561021757406433,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MoveArea",
+									"sid": 235691084756447,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "debugSprite",
+									"sid": 998874112596864,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "GravityZone",
+									"sid": 658009202448489,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Vector",
+									"sid": 209208849927138,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 926266995032493
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 384821504249096
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Collider",
+									"sid": 533097857210937,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "MoveArea",
+									"sid": 206057333129694,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "debugSprite",
+									"sid": 874347362349251,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "GravityZone",
+									"sid": 347324300120199,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Vector",
+									"sid": 137816610242761,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 194314480197126
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 445310255695524,
+							"parameters": {
+								"mouse-button": "right",
+								"click-type": "clicked",
+								"object-clicked": "Collider"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 112297035705887,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 614731349494419,
+									"parameters": {
+										"key": 16
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Collider",
+									"sid": 752856284883382,
+									"parameters": {
+										"instance-variable": "Skin",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "Head",
+									"sid": 262536709916761,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "Body",
+									"sid": 219439029613478,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "LeftArm",
+									"sid": 565691949918641,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "LeftFoot",
+									"sid": 937881465604017,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "LeftHand",
+									"sid": 490114198403506,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "LeftLeg",
+									"sid": 792536556387558,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "RightArm",
+									"sid": 525609223861610,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "RightFoot",
+									"sid": 127985826954033,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "RightHand",
+									"sid": 674216384104739,
+									"behaviorType": "Skin"
+								},
+								{
+									"id": "usedefault3",
+									"objectClass": "RightLeg",
+									"sid": 511676208731985,
+									"behaviorType": "Skin"
+								}
+							],
+							"sid": 408575569518488,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 214269212387042
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 387321417851164,
+									"parameters": {
+										"key": 17
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Collider",
+									"sid": 958757798968821,
+									"parameters": {
+										"instance-variable": "Skin",
+										"value": "SkinGroup.RandomSkin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "Head",
+									"sid": 917191841517443,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "Body",
+									"sid": 575904175580028,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "LeftArm",
+									"sid": 254503488256754,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "LeftFoot",
+									"sid": 535717313248207,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "LeftHand",
+									"sid": 242165722892386,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "LeftLeg",
+									"sid": 657656714075969,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "RightArm",
+									"sid": 772708326724005,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "RightFoot",
+									"sid": 625825707355584,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "RightHand",
+									"sid": 182752775108333,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								},
+								{
+									"id": "setskin0",
+									"objectClass": "RightLeg",
+									"sid": 374121723863796,
+									"behaviorType": "Skin",
+									"parameters": {
+										"skin_tag0": "Collider.Skin"
+									}
+								}
+							],
+							"sid": 803270962791449,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"functionName": "TakeFullLayoutScreenshot",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 718061977475191,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "camX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 761262120953645
+						},
+						{
+							"eventType": "variable",
+							"name": "camY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": true,
+							"isConstant": false,
+							"sid": 758527979817849
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 747568535583329,
+									"parameters": {
+										"variable": "camX",
+										"value": "scrollx"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 558621911528086,
+									"parameters": {
+										"variable": "camY",
+										"value": "scrolly"
+									}
+								},
+								{
+									"id": "enablefollowing3",
+									"objectClass": "MagiCam",
+									"sid": 271688446235207,
+									"parameters": {
+										"camera0": "\"\"",
+										"following3": "disable"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "NWjs",
+									"sid": 295749451442311,
+									"parameters": {
+										"width": "1280"
+									}
+								},
+								{
+									"id": "set-height",
+									"objectClass": "NWjs",
+									"sid": 419011520888128,
+									"parameters": {
+										"height": "1280"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 323671570318656,
+									"parameters": {
+										"object-to-create": "Screenshot",
+										"layer": "0",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Screenshot",
+									"sid": 595490761415275,
+									"parameters": {
+										"width": "levelWidth",
+										"height": "levelHeight"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 644354247657288,
+									"parameters": {
+										"object-to-create": "screenshotSprite",
+										"layer": "0",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 327159557623566,
+									"parameters": {
+										"type": "log",
+										"message": "\"Init done\""
+									}
+								},
+								{
+									"callFunction": "FullLayoutScreenshotProcess",
+									"sid": 261172359164154,
+									"parameters": [
+										"0",
+										"0"
+									]
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 546981864588377,
+									"parameters": {
+										"tag": "\"screenshot finished\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 586484342251916,
+									"parameters": {
+										"type": "log",
+										"message": "\"Saving image\""
+									}
+								},
+								{
+									"id": "save-image",
+									"objectClass": "Screenshot",
+									"sid": 553127318663024,
+									"parameters": {
+										"format": "png",
+										"jpeg-quality": "75",
+										"x": "0",
+										"y": "0",
+										"width": "0",
+										"height": "0"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 537118572269476
+								},
+								{
+									"id": "enablefollowing3",
+									"objectClass": "MagiCam",
+									"sid": 315939556477808,
+									"parameters": {
+										"camera0": "\"\"",
+										"following3": "enable"
+									}
+								},
+								{
+									"id": "invoke-download",
+									"objectClass": "Browser",
+									"sid": 453864964374072,
+									"parameters": {
+										"url": "Screenshot.SavedImageURL",
+										"filename": "LayoutName & \"_fullScreenshot.png\""
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 113988619364334,
+									"parameters": {
+										"x": "camX",
+										"y": "camY"
+									}
+								},
+								{
+									"id": "setposition203",
+									"objectClass": "MagiCam",
+									"sid": 322171003094426,
+									"parameters": {
+										"name0": "\"\"",
+										"x1": "camX",
+										"y2": "camY"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Screenshot",
+									"sid": 172246603983690
+								},
+								{
+									"id": "destroy",
+									"objectClass": "screenshotSprite",
+									"sid": 552055055399888
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 812500819638209,
+									"parameters": {
+										"type": "log",
+										"message": "\"Finished taking screenshot\""
+									}
+								}
+							],
+							"sid": 103801713556245
+						}
+					]
+				},
+				{
+					"functionName": "FullLayoutScreenshotProcess",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": true,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 486942697406394
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 351716327523106
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 162169270936597,
+							"parameters": {
+								"type": "log",
+								"message": "\"x: \" & x & \" , y: \" & y"
+							}
+						}
+					],
+					"sid": 314031459457403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 262779227256521,
+									"parameters": {
+										"value": "x",
+										"lower-bound": "0",
+										"upper-bound": "floor(levelWidth / 1280)"
+									}
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 766601364067542,
+									"parameters": {
+										"value": "y",
+										"lower-bound": "0",
+										"upper-bound": "floor(levelHeight / 1280)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 862957049574410,
+									"parameters": {
+										"type": "log",
+										"message": "\"take screenshot\""
+									}
+								},
+								{
+									"id": "setposition203",
+									"objectClass": "MagiCam",
+									"sid": 872698704816233,
+									"parameters": {
+										"name0": "\"\"",
+										"x1": "1280/2 + 1280 * x",
+										"y2": "1280/2 + 1280 * y"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 550385247465508,
+									"parameters": {
+										"x": "1280/2 + 1280 * x",
+										"y": "1280/2 + 1280 * y"
+									}
+								},
+								{
+									"id": "snapshot-canvas",
+									"objectClass": "System",
+									"sid": 104753265724166,
+									"parameters": {
+										"format": "png",
+										"jpeg-quality": "75",
+										"x": "0",
+										"y": "0",
+										"width": "0",
+										"height": "0"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 806578370467140
+								},
+								{
+									"id": "load-image-from-url",
+									"objectClass": "screenshotSprite",
+									"sid": 773321719332864,
+									"parameters": {
+										"uri": "CanvasSnapshot",
+										"size": "resize-to-image-size",
+										"cross-origin": "anonymous"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 352361100706634
+								},
+								{
+									"id": "set-position",
+									"objectClass": "screenshotSprite",
+									"sid": 204548705612762,
+									"parameters": {
+										"x": "scrollx - 640",
+										"y": "scrolly - 640"
+									}
+								},
+								{
+									"id": "paste-object",
+									"objectClass": "Screenshot",
+									"sid": 936200698554040,
+									"parameters": {
+										"object": "screenshotSprite",
+										"effects": "with-effects"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 658033942311611,
+									"parameters": {
+										"type": "log",
+										"message": "\"move X\""
+									}
+								},
+								{
+									"callFunction": "FullLayoutScreenshotProcess",
+									"sid": 939264398170099,
+									"parameters": [
+										"x + 1",
+										"y"
+									]
+								}
+							],
+							"sid": 672683013539034
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 414432274033205
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 309960003160936,
+									"parameters": {
+										"value": "y",
+										"lower-bound": "0",
+										"upper-bound": "floor(levelHeight / 1280)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 635090661014489,
+									"parameters": {
+										"type": "log",
+										"message": "\"move Y\""
+									}
+								},
+								{
+									"callFunction": "FullLayoutScreenshotProcess",
+									"sid": 302480369965488,
+									"parameters": [
+										"0",
+										"y + 1"
+									]
+								}
+							],
+							"sid": 753402856135182
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 454699323389182
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 747304573788916,
+									"parameters": {
+										"type": "log",
+										"message": "\"finished\""
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 807314449523567,
+									"parameters": {
+										"tag": "\"screenshot finished\""
+									}
+								}
+							],
+							"sid": 129692839178929
+						}
+					]
+				}
+			],
+			"sid": 799690784588537
+		}
+	],
+	"sid": 689739405581624
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Clock",
+	"plugin-id": "CV_Clock",
+	"sid": 305977062530779,
+	"singleglobal-inst": {
+		"type": "Clock",
+		"properties": {
+			"debug-mode": true,
+			"listen-interval": 1,
+			"cheat-guard": false,
+			"guard-mode": "trigger-only",
+			"guard-tolerance": 60,
+			"safe-mode": false
+		},
+		"uid": 2367
+	}
+}

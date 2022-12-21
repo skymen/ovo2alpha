@@ -1,0 +1,10 @@
+{
+	"name": "MagiCam",
+	"plugin-id": "MagiCam",
+	"sid": 561830064056091,
+	"singleglobal-inst": {
+		"type": "MagiCam",
+		"properties": {},
+		"uid": 30
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "LeftArm",
+	"plugin-id": "Sprite",
+	"sid": 539877283127387,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 16,
+						"originX": 1,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 22,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 1,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 609846425742920,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

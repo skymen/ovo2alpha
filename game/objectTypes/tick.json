@@ -1,0 +1,10 @@
+{
+	"name": "Tick",
+	"plugin-id": "CV_Tick",
+	"sid": 612065009421642,
+	"singleglobal-inst": {
+		"type": "Tick",
+		"properties": {},
+		"uid": 82
+	}
+}

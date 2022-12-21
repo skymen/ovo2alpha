@@ -1,0 +1,135 @@
+{
+    "specialInputs": {
+        "keyboard": [],
+        "gamepad": []
+    },
+    "listening": null,
+    "inputs": [
+        {
+            "name": "Up",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 38
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Down",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 40
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Left",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 37
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Right",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 39
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Restart",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 82
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Full Restart",
+            "keyboard": {
+                "ctrl": true,
+                "alt": false,
+                "shift": false,
+                "input": 82
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Debug",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 113
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+        {
+            "name": "Pause",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 27
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }	
+        },
+        {
+            "name": "Next",
+            "keyboard": {
+                "ctrl": false,
+                "alt": false,
+                "shift": false,
+                "input": 13
+            },
+            "gamepad": {
+                "start": false,
+                "select": false,
+                "input": 6
+            }
+        },
+    ]
+}

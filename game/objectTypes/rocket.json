@@ -1,0 +1,108 @@
+{
+	"name": "Rocket",
+	"plugin-id": "Sprite",
+	"sid": 677212617412895,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Parent",
+			"type": "number",
+			"desc": "",
+			"sid": 372962964711348
+		},
+		{
+			"name": "Smart",
+			"type": "boolean",
+			"desc": "",
+			"sid": 103801686769521
+		},
+		{
+			"name": "PortalUID",
+			"type": "number",
+			"desc": "",
+			"sid": 810055280746836
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 335355166900874
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 60,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 481319618438082,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 16,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 63,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 877991718572225,
+				"name": "MultiBullet",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 32,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 79,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 602808304285693,
+				"name": "Smart",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

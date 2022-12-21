@@ -1,0 +1,91 @@
+{
+	"name": "MoveArea",
+	"plugin-id": "Sprite",
+	"sid": 672405455465843,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"sid": 494167208663578
+		},
+		{
+			"name": "AutoStart",
+			"type": "boolean",
+			"desc": "If true, the moveArea will start moving immediately",
+			"sid": 390949649952692
+		},
+		{
+			"name": "Movement",
+			"type": "string",
+			"desc": "move, movex, movey, angle, wait, goto",
+			"sid": 822237962809251
+		},
+		{
+			"name": "curMovement",
+			"type": "number",
+			"desc": "",
+			"sid": 222969149227470
+		},
+		{
+			"name": "waiting",
+			"type": "boolean",
+			"desc": "",
+			"sid": 936400237322034
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 439940257780417
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 718532491831034
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 263233098100606,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

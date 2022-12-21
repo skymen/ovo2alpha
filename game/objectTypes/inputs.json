@@ -1,0 +1,44 @@
+{
+	"name": "Inputs",
+	"plugin-id": "Globals",
+	"sid": 191992680373031,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "LeftInput",
+			"type": "number",
+			"desc": "",
+			"sid": 680667607516104
+		},
+		{
+			"name": "UpInput",
+			"type": "number",
+			"desc": "",
+			"sid": 470172681955858
+		},
+		{
+			"name": "RightInput",
+			"type": "number",
+			"desc": "",
+			"sid": 134600316071556
+		},
+		{
+			"name": "DownInput",
+			"type": "number",
+			"desc": "",
+			"sid": 709547085971700
+		},
+		{
+			"name": "Listening",
+			"type": "boolean",
+			"desc": "",
+			"sid": 466194925369523
+		},
+		{
+			"name": "Next",
+			"type": "number",
+			"desc": "",
+			"sid": 164243118476182
+		}
+	]
+}

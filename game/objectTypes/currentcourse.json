@@ -1,0 +1,14 @@
+{
+	"name": "CurrentCourse",
+	"plugin-id": "Json",
+	"sid": 405538601704815,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "CurrentLevel",
+			"type": "number",
+			"desc": "",
+			"sid": 106183683664371
+		}
+	]
+}

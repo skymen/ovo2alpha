@@ -1,0 +1,38 @@
+{
+	"name": "JumpThrough",
+	"plugin-id": "TiledBg",
+	"sid": 996162560058172,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 165758541917201
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 24,
+		"height": 8,
+		"originX": 0.3333333333333333,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 54,
+		"collisionPoly": {
+			"points": [
+				0,
+				0,
+				0.4583333333333333,
+				0,
+				0.4583333333333333,
+				1,
+				0,
+				1
+			]
+		},
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "RightLeg",
+	"plugin-id": "Sprite",
+	"sid": 588887864652978,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 8,
+						"height": 16,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 26,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Imagepoint 1",
+								"x": 0,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 857768145348490,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

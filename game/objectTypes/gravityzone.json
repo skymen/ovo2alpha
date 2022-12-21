@@ -1,0 +1,57 @@
+{
+	"name": "GravityZone",
+	"plugin-id": "TiledBg",
+	"sid": 821293911825947,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "OverwriteAngle",
+			"type": "boolean",
+			"desc": "",
+			"sid": 758471819860778
+		},
+		{
+			"name": "ForcedAngle",
+			"type": "number",
+			"desc": "",
+			"sid": 766452908734163
+		},
+		{
+			"name": "OverWriteGravity",
+			"type": "boolean",
+			"desc": "",
+			"sid": 247755002643176
+		},
+		{
+			"name": "ForcedGravity",
+			"type": "number",
+			"desc": "",
+			"sid": 523219347652653
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 96,
+		"height": 96,
+		"originX": 1.46875,
+		"originY": 1.46875,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 67,
+		"collisionPoly": {
+			"points": [
+				0.16666666666666666,
+				0.16666666666666666,
+				0.8333333333333334,
+				0.16666666666666666,
+				0.8333333333333334,
+				0.8333333333333334,
+				0.16666666666666666,
+				0.8333333333333334
+			]
+		},
+		"useCollisionPoly": true
+	}
+}

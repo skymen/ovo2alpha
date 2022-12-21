@@ -1,0 +1,392 @@
+{
+	"name": "Save",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Save",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Save > Init",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 354557999988738
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Globals",
+									"sid": 971047232550691,
+									"parameters": {
+										"instance-variable": "StartOfGame"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Load",
+									"sid": 998891859858581
+								}
+							],
+							"sid": 194918437686854
+						}
+					],
+					"sid": 386354733974900
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Save > API",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "Save",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 828686668447993,
+									"parameters": {
+										"key": "\"version\"",
+										"value": "projectversion"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 728201421902949,
+									"parameters": {
+										"key": "\"levels\"",
+										"value": "LevelsJSON.GetAsCompactString(\"0\")"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 969679906361450,
+									"parameters": {
+										"key": "\"options\"",
+										"value": "OptionsJSON.GetAsCompactString(\"0\")"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 308871402944625,
+									"parameters": {
+										"key": "\"inputs\"",
+										"value": "InputsJSON.GetAsCompactString(\"0\")"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 926723070471540,
+									"parameters": {
+										"key": "\"skins\"",
+										"value": "SkinsJSON.GetAsCompactString(\"0\")"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Save",
+									"sid": 106176127972934,
+									"parameters": {
+										"key": "\"achievements\"",
+										"value": "AchievementsJSON.GetAsCompactString(\"0\")"
+									}
+								},
+								{
+									"id": "set-from-text",
+									"objectClass": "BinaryData",
+									"sid": 896963953829089,
+									"parameters": {
+										"value": "Save.AsJSON"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 190756828000719,
+									"parameters": {
+										"key": "\"ovo2SaveData\"",
+										"value": "BinaryData.GetBase64"
+									}
+								}
+							],
+							"sid": 205571529466050
+						},
+						{
+							"functionName": "InitSaveData",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 402637278495246
+						},
+						{
+							"functionName": "Load",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 277566833829767,
+									"parameters": {
+										"key": "\"ovo2SaveData\""
+									}
+								}
+							],
+							"sid": 533456902378775
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 373571240727822,
+									"parameters": {
+										"key": "\"ovo2SaveData\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "get-item",
+									"objectClass": "LocalStorage",
+									"sid": 889350027655982,
+									"parameters": {
+										"key": "\"ovo2SaveData\""
+									}
+								}
+							],
+							"sid": 582813487611413
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-missing",
+									"objectClass": "LocalStorage",
+									"sid": 323923510973625,
+									"parameters": {
+										"key": "\"ovo2SaveData\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "InitSaveData",
+									"sid": 821898269514530
+								}
+							],
+							"sid": 497982289020283
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-get",
+									"objectClass": "LocalStorage",
+									"sid": 565916963877520,
+									"parameters": {
+										"key": "\"ovo2SaveData\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-from-base64",
+									"objectClass": "BinaryData",
+									"sid": 384454032659246,
+									"parameters": {
+										"value": "LocalStorage.ItemValue"
+									}
+								},
+								{
+									"id": "load",
+									"objectClass": "Save",
+									"sid": 820332784543404,
+									"parameters": {
+										"json": "BinaryData.GetText(0, BinaryData.ByteLength)"
+									}
+								}
+							],
+							"sid": 297394712102838,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Save",
+											"sid": 527381492548612,
+											"parameters": {
+												"key": "\"levels\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-json",
+											"objectClass": "LevelsJSON",
+											"sid": 865356690417381,
+											"parameters": {
+												"path": "\"0\"",
+												"json": "Save.Get(\"levels\")"
+											}
+										}
+									],
+									"sid": 646820915230750
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Save",
+											"sid": 970726158618551,
+											"parameters": {
+												"key": "\"options\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-json",
+											"objectClass": "OptionsJSON",
+											"sid": 655383950050246,
+											"parameters": {
+												"path": "\"0\"",
+												"json": "Save.Get(\"options\")"
+											}
+										}
+									],
+									"sid": 631535874597089
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Save",
+											"sid": 722625637051977,
+											"parameters": {
+												"key": "\"inputs\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-json",
+											"objectClass": "InputsJSON",
+											"sid": 527660705455504,
+											"parameters": {
+												"path": "\"0\"",
+												"json": "Save.Get(\"inputs\")"
+											}
+										}
+									],
+									"sid": 929828527087039
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Save",
+											"sid": 711128449794267,
+											"parameters": {
+												"key": "\"skins\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-json",
+											"objectClass": "SkinsJSON",
+											"sid": 138513189902639,
+											"parameters": {
+												"path": "\"0\"",
+												"json": "Save.Get(\"skins\")"
+											}
+										}
+									],
+									"sid": 388098240134328
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Save",
+											"sid": 617442374313543,
+											"parameters": {
+												"key": "\"achievements\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-json",
+											"objectClass": "AchievementsJSON",
+											"sid": 935093705301376,
+											"parameters": {
+												"path": "\"0\"",
+												"json": "Save.Get(\"achievements\")"
+											}
+										}
+									],
+									"sid": 702421920662345
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "Save",
+											"sid": 435874633077275
+										}
+									],
+									"sid": 225437481656042
+								}
+							]
+						}
+					],
+					"sid": 414132400565244
+				}
+			],
+			"sid": 848415933821971
+		}
+	],
+	"sid": 904443235863777
+}

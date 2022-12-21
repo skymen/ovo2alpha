@@ -1,0 +1,56 @@
+{
+	"name": "JumpBoost",
+	"plugin-id": "Sprite",
+	"sid": 193076892879670,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Force",
+			"type": "number",
+			"desc": "0 to 1: The force at which the jump pad sends you",
+			"sid": 791645134968466
+		},
+		{
+			"name": "Decel",
+			"type": "boolean",
+			"desc": "",
+			"sid": 835394193849519
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 964561671334608
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 44,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 770609421030579,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

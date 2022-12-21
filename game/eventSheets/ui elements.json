@@ -1,0 +1,1299 @@
+{
+	"name": "UI Elements",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Inputs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 570092867221707
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "UIButtonOutline",
+					"sid": 763810969903032,
+					"parameters": {
+						"animation": "UIButton.AnimationName",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "UIButtonOutline",
+					"sid": 276855229595761,
+					"parameters": {
+						"where": "behind",
+						"object": "UIButton"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UIButtonOutline",
+					"sid": 588949513410272,
+					"parameters": {
+						"width": "UIButton.Width + UIButton.OutlineSize * 2",
+						"height": "UIButton.Height + UIButton.OutlineSize * 2"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "UIButtonOutline",
+					"sid": 972127062514579,
+					"parameters": {
+						"object": "UIButton",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "UIButtonOutline",
+					"sid": 594318641072911,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "UIButton",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "absolute",
+						"height-type": "absolute",
+						"z": false
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "UIDialogOutline",
+					"sid": 550488195115137,
+					"parameters": {
+						"animation": "UIDialog.AnimationName",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "UIDialogOutline",
+					"sid": 857025192937223,
+					"parameters": {
+						"where": "behind",
+						"object": "UIDialog"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UIDialogOutline",
+					"sid": 181283558796007,
+					"parameters": {
+						"width": "UIDialog.Width + UIDialog.OutlineSize * 2",
+						"height": "UIDialog.Height + UIDialog.OutlineSize * 2"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "UIDialogOutline",
+					"sid": 507257838971529,
+					"parameters": {
+						"object": "UIDialog",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "UIDialogOutline",
+					"sid": 363068553474072,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "UIDialog",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "absolute",
+						"height-type": "absolute",
+						"z": false
+					}
+				}
+			],
+			"sid": 989397403362457,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIElements",
+							"sid": 304737293933916,
+							"parameters": {
+								"instance-variable": "Text",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 150704949912272,
+							"parameters": {
+								"object": "UIElements"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 742198799459481,
+							"parameters": {
+								"object-to-create": "UIText2",
+								"layer": "UIElements.LayerName",
+								"x": "(UIElements.BBoxLeft + UIElements.BBoxRight) / 2",
+								"y": "(UIElements.BBoxTop + UIElements.BBoxBottom) / 2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "UIText2",
+							"sid": 276543967584178,
+							"parameters": {
+								"width": "UIElements.Width",
+								"height": "UIElements.Height"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UIText2",
+							"sid": 130487887530586,
+							"behaviorType": "SpritefontDeluxe",
+							"parameters": {
+								"text": "UIElements.Text"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "UIText2",
+							"sid": 851474018906118,
+							"parameters": {
+								"scale": "1.0"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "UIText2",
+							"sid": 287182007960638,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "UIElements",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "absolute",
+								"height-type": "absolute",
+								"z": false
+							}
+						}
+					],
+					"sid": 632500859518511
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "onmouseenter0",
+					"objectClass": "UIButton",
+					"sid": 773358976779479,
+					"behaviorType": "Button"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "UIButton",
+					"sid": 336945233078559,
+					"parameters": {
+						"instance-variable": "hovering",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 516933872090862,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 905687119546857,
+							"parameters": {
+								"object": "UIButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "setFocused",
+							"objectClass": "UIButton",
+							"sid": 160965028689571,
+							"behaviorType": "Button",
+							"parameters": {
+								"state": "no"
+							}
+						}
+					],
+					"sid": 620252503724449
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "setFocused",
+							"objectClass": "UIButton",
+							"sid": 383262078592667,
+							"behaviorType": "Button",
+							"parameters": {
+								"state": "yes"
+							}
+						}
+					],
+					"sid": 492219532977662
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "onmouseleave1",
+					"objectClass": "UIButton",
+					"sid": 416876900092799,
+					"behaviorType": "Button"
+				}
+			],
+			"actions": [
+				{
+					"id": "setFocused",
+					"objectClass": "UIButton",
+					"sid": 340450593026144,
+					"behaviorType": "Button",
+					"parameters": {
+						"state": "no"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "UIButton",
+					"sid": 230217958789106,
+					"parameters": {
+						"instance-variable": "hovering",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 364799769061660
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "onfocused",
+					"objectClass": "UIButton",
+					"sid": 242575685583265,
+					"behaviorType": "Button"
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UIButton",
+					"sid": 980472174642496,
+					"parameters": {
+						"instance-variable": "tooltip",
+						"comparison": 1,
+						"value": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "UIButton",
+					"sid": 975562109034980,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "0.5",
+						"type": "once",
+						"tag": "\"tooltip\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 816958638885256,
+					"parameters": {
+						"type": "log",
+						"message": "\"on focus\""
+					}
+				}
+			],
+			"sid": 322348621458408
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "onunfocused",
+					"objectClass": "UIButton",
+					"sid": 926558126196428,
+					"behaviorType": "Button"
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UIButton",
+					"sid": 462952190763014,
+					"parameters": {
+						"instance-variable": "tooltip",
+						"comparison": 1,
+						"value": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 163212265933937,
+					"parameters": {
+						"type": "log",
+						"message": "\"on unfocus\""
+					}
+				}
+			],
+			"sid": 485984892355678,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "UIButton",
+							"sid": 678485603657380,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"tooltip\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "UIButton",
+							"sid": 524832195826215,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"tooltip\""
+							}
+						}
+					],
+					"sid": 285327300981910
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 958425437530877
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "closeTooltip",
+							"sid": 279386414104421
+						}
+					],
+					"sid": 401645411631570
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 213988166760500,
+					"isInverted": true
+				},
+				{
+					"id": "is-on-mobile",
+					"objectClass": "PlatformInfo",
+					"sid": 828940115187068
+				},
+				{
+					"id": "isfocused",
+					"objectClass": "UIButton",
+					"sid": 391285015418721,
+					"behaviorType": "Button"
+				}
+			],
+			"actions": [
+				{
+					"id": "setFocused",
+					"objectClass": "UIButton",
+					"sid": 388388375056750,
+					"behaviorType": "Button",
+					"parameters": {
+						"state": "no"
+					}
+				}
+			],
+			"sid": 786756620964279
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "UIButton",
+					"sid": 181656830365827,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"tooltip\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "openTooltip",
+					"sid": 722311879696861,
+					"parameters": [
+						"UIButton.tooltip",
+						"abs(UIButton.tooltipFollowMouse * UIButton.hovering - 1) * UIButton.X + UIButton.tooltipOffsetX",
+						"abs(UIButton.tooltipFollowMouse * UIButton.hovering - 1) * UIButton.Y + UIButton.tooltipOffsetY",
+						"UIButton.tooltipWidth",
+						"UIButton.tooltipHeight",
+						"UIButton.tooltipFollowMouse & UIButton.hovering"
+					]
+				}
+			],
+			"sid": 166352482310363
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 646646590237720
+				}
+			],
+			"actions": [
+				{
+					"id": "init",
+					"objectClass": "ProUI",
+					"sid": 323303801762599
+				},
+				{
+					"type": "script",
+					"script": "runtime.objects.UIButton.getAllInstances().forEach(button => {\n\tbutton.onClick = (new Function(\"runtime\", button.instVars.onClick)).bind(button, runtime);\n})"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "SmallButtonsIcons",
+					"sid": 192287163510978
+				}
+			],
+			"sid": 363833731291151,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "isempty0",
+							"objectClass": "Icons",
+							"sid": 457328451585055
+						}
+					],
+					"actions": [
+						{
+							"id": "addskin0",
+							"objectClass": "Icons",
+							"sid": 688563724924718,
+							"parameters": {
+								"object0": "SmallButtonsIcons",
+								"skin_tag1": "\"smallbuttons\"",
+								"mode4": "add all animations as sub skins",
+								"animation_name5": "\"\"",
+								"sub_skin_tag6": "\"\""
+							}
+						},
+						{
+							"id": "init4",
+							"objectClass": "Icons",
+							"sid": 469228818316266
+						}
+					],
+					"sid": 973458560664743
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text2",
+							"sid": 163458821439323,
+							"parameters": {
+								"instance-variable": "runtime"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.objects.Text2.getPickedInstances().forEach(text => {\n\ttext.getValue = (new Function(\"runtime\", text.instVars.getValue)).bind(text, runtime);\n})"
+						},
+						{
+							"callFunction": "UpdateTexts",
+							"sid": 496427288975709
+						}
+					],
+					"sid": 732803647441595
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "onclicked3",
+					"objectClass": "UIButton",
+					"sid": 143262640049792,
+					"behaviorType": "Button"
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "runtime.objects.UIButton.getFirstPickedInstance().onClick();"
+				}
+			],
+			"sid": 678596927326388,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "UIButton",
+							"sid": 841693803684001,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"tooltip\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "UIButton",
+							"sid": 956700198106859,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"tooltip\""
+							}
+						}
+					],
+					"sid": 793514964495890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 802514179649477
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "closeTooltip",
+							"sid": 789570444139712
+						}
+					],
+					"sid": 979363065498365
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "UIButton",
+					"sid": 320863233588715,
+					"isInverted": true
+				},
+				{
+					"id": "isfocused",
+					"objectClass": "UIButton",
+					"sid": 733231889241969,
+					"behaviorType": "Button"
+				}
+			],
+			"actions": [
+				{
+					"id": "setFocused",
+					"objectClass": "UIButton",
+					"sid": 585121125353749,
+					"behaviorType": "Button",
+					"parameters": {
+						"state": "no"
+					}
+				}
+			],
+			"sid": 886016902189629
+		},
+		{
+			"functionName": "openDialog",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 454660105506614
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "setFocused",
+					"objectClass": "UIButton",
+					"sid": 691436806069250,
+					"behaviorType": "Button",
+					"parameters": {
+						"state": "no"
+					}
+				}
+			],
+			"sid": 222045123085046,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIDialog",
+							"sid": 602050416735398,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "id"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "open0",
+							"objectClass": "UIDialog",
+							"sid": 122072107084945,
+							"behaviorType": "Dialog",
+							"parameters": {
+								"target_x0": "0",
+								"target_y1": "0",
+								"center4": "yes"
+							}
+						}
+					],
+					"sid": 684028353671128
+				}
+			]
+		},
+		{
+			"functionName": "closeDialog",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "id",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 818409118545581
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "setFocused",
+					"objectClass": "UIButton",
+					"sid": 183123688482388,
+					"behaviorType": "Button",
+					"parameters": {
+						"state": "no"
+					}
+				}
+			],
+			"sid": 395348864314151,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "UIDialog",
+							"sid": 832714682748797,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "id"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "close1",
+							"objectClass": "UIDialog",
+							"sid": 884602442865935,
+							"behaviorType": "Dialog"
+						}
+					],
+					"sid": 705465826658553
+				}
+			]
+		},
+		{
+			"functionName": "UpdateTexts",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 412643414814118,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text2",
+							"sid": 960638421408040,
+							"parameters": {
+								"instance-variable": "runtime"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "runtime.objects.Text2.getPickedInstances().forEach(text => {\n\ttext.text = text.getValue();\n})"
+						}
+					],
+					"sid": 164358219248988
+				}
+			]
+		},
+		{
+			"functionName": "openTooltip",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "text",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 643195843619763
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 377965512378418
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 998966014472388
+				},
+				{
+					"name": "tooltipWidth",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 398064158889726
+				},
+				{
+					"name": "tooltipHeight",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 768186792960809
+				},
+				{
+					"name": "followMouse",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 862241900276693
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "UITooltiptText",
+					"sid": 260199040552229,
+					"behaviorType": "SpritefontDeluxe",
+					"parameters": {
+						"text": "text"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltiptText",
+					"sid": 145106296771141,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltip",
+					"sid": 600789437729791,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltipOutline",
+					"sid": 648521714828764,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "UITooltiptText",
+					"sid": 116674532835994,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UITooltip",
+					"sid": 209522913794484,
+					"parameters": {
+						"width": "0",
+						"height": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UITooltip",
+					"sid": 917388759830646,
+					"parameters": {
+						"instance-variable": "followMouse",
+						"value": "followMouse"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UITooltip",
+					"sid": 524564740310077,
+					"parameters": {
+						"instance-variable": "offsetX",
+						"value": "x"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "UITooltip",
+					"sid": 273352123744467,
+					"parameters": {
+						"instance-variable": "offsetY",
+						"value": "y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "UITooltip",
+					"sid": 724668189598221,
+					"parameters": {
+						"x": "x",
+						"y": "y"
+					}
+				},
+				{
+					"id": "tween-two-properties",
+					"objectClass": "UITooltip",
+					"sid": 382460865282402,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"sizeOpen\"",
+						"property": "size",
+						"end-x": "tooltipWidth + 8",
+						"end-y": "tooltipHeight + 8",
+						"time": "0.3",
+						"ease": "easeoutback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "UITooltipOutline",
+					"sid": 499144922771673,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"opacityOpen\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "UITooltiptText",
+					"sid": 568983734414794,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"opacityOpen\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 903637324994476
+		},
+		{
+			"functionName": "closeTooltip",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "tween-two-properties",
+					"objectClass": "UITooltip",
+					"sid": 871634551870560,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"sizeClose\"",
+						"property": "size",
+						"end-x": "0",
+						"end-y": "0",
+						"time": "0.3",
+						"ease": "easeinback",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "UITooltipOutline",
+					"sid": 363780803799637,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"opacityClose\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "UITooltiptText",
+					"sid": 372251504582822,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"opacityClose\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.3",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no"
+					}
+				}
+			],
+			"sid": 659175238618743
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 962834715792102
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "UITooltip",
+					"sid": 604800574327429
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 109175060355084,
+					"parameters": {
+						"object-to-create": "UITooltip",
+						"layer": "\"tooltip\"",
+						"x": "0",
+						"y": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 354841439124705
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "UITooltip",
+					"sid": 494072547902496
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "UITooltipOutline",
+					"sid": 629727359175812,
+					"parameters": {
+						"object": "UITooltip",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UITooltipOutline",
+					"sid": 249335558603409,
+					"parameters": {
+						"width": "UITooltip.Width + 8",
+						"height": "UITooltip.Height + 8"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "UITooltipOutline",
+					"sid": 645706385882051,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "UITooltip",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "absolute",
+						"height-type": "absolute",
+						"z": false
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "UITooltiptText",
+					"sid": 500811947469787,
+					"parameters": {
+						"object": "UITooltip",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "UITooltiptText",
+					"sid": 774321498563682,
+					"parameters": {
+						"width": "UITooltip.Width - 8",
+						"height": "UITooltip.Height - 8"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "UITooltiptText",
+					"sid": 618191380838402,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "UITooltip",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "absolute",
+						"height-type": "absolute",
+						"z": false
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltip",
+					"sid": 230269708722205,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltipOutline",
+					"sid": 856104842363672,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltiptText",
+					"sid": 290320270012650,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "UITooltipOutline",
+					"sid": 197776306822704
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "UITooltip",
+					"sid": 197943925130967
+				},
+				{
+					"id": "move-to-top",
+					"objectClass": "UITooltiptText",
+					"sid": 412080532027081
+				}
+			],
+			"sid": 834287993091681
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tweens-finished",
+					"objectClass": "UITooltip",
+					"sid": 754068822104904,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"sizeClose\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltip",
+					"sid": 693278873054015,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltipOutline",
+					"sid": 193223499385747,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "UITooltiptText",
+					"sid": 579940840731529,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 523498927312594
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "UITooltip",
+					"sid": 470276609358620
+				},
+				{
+					"id": "is-playing",
+					"objectClass": "UITooltip",
+					"sid": 522436810480649,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"sizeClose\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "UITooltip",
+					"sid": 965858605206176,
+					"parameters": {
+						"instance-variable": "followMouse",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "UITooltip",
+					"sid": 386739867235534,
+					"parameters": {
+						"x": "Mouse.X(\"tooltip\") + Self.offsetX",
+						"y": "Mouse.Y(\"tooltip\") + Self.offsetY"
+					}
+				}
+			],
+			"sid": 370444330146208
+		}
+	],
+	"sid": 477293613350669
+}

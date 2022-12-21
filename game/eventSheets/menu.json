@@ -1,0 +1,1626 @@
+{
+	"name": "Menu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "UI Elements"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "directionX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 360328425387264
+				},
+				{
+					"eventType": "variable",
+					"name": "directionY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 856100365026284
+				},
+				{
+					"eventType": "variable",
+					"name": "delayState",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 318505927583209
+				},
+				{
+					"eventType": "variable",
+					"name": "joystick",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 811092750737844
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 719847071159121,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 114309494399243,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 1,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 721471495057659,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 772335395087255
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 917003879126144,
+									"parameters": {
+										"variable": "directionX",
+										"value": "Gamepad.Axis(0,0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 827547590183599,
+									"parameters": {
+										"variable": "directionY",
+										"value": "Gamepad.Axis(0,1)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 189199367381647,
+									"parameters": {
+										"variable": "delayState",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 292569622899605,
+									"parameters": {
+										"variable": "joystick",
+										"value": "true"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 325264995428461,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 930113070693578,
+									"parameters": {
+										"seconds": "dt"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 109087967981514,
+									"parameters": {
+										"duration": "0",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 888103447088713
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 525609263004060,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 815952615775856,
+							"parameters": {
+								"variable": "directionX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 945154300236159,
+							"parameters": {
+								"variable": "directionY",
+								"value": "-100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 229788129603528,
+							"parameters": {
+								"variable": "delayState",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 403068925939813,
+							"parameters": {
+								"variable": "joystick",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Clock",
+							"sid": 604463923970198,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 369192667983416,
+							"parameters": {
+								"seconds": "dt"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Clock",
+							"sid": 406935647554149,
+							"parameters": {
+								"duration": "0",
+								"type": "once",
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"sid": 786313266481823
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 220516748541500,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 818349240265703,
+							"parameters": {
+								"variable": "directionX",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 440372197105302,
+							"parameters": {
+								"variable": "directionY",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 377059732218178,
+							"parameters": {
+								"variable": "delayState",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 693709584317012,
+							"parameters": {
+								"variable": "joystick",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Clock",
+							"sid": 617308144063295,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 519043198944242,
+							"parameters": {
+								"seconds": "dt"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Clock",
+							"sid": 259349309525558,
+							"parameters": {
+								"duration": "0",
+								"type": "once",
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"sid": 200332913925306
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 207552733186892,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-left"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 576998206936849,
+							"parameters": {
+								"variable": "directionX",
+								"value": "-100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 569986099902957,
+							"parameters": {
+								"variable": "directionY",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 263755363756073,
+							"parameters": {
+								"variable": "delayState",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 175228205649149,
+							"parameters": {
+								"variable": "joystick",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Clock",
+							"sid": 403189240816989,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 987134927601899,
+							"parameters": {
+								"seconds": "dt"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Clock",
+							"sid": 977540541989125,
+							"parameters": {
+								"duration": "0",
+								"type": "once",
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"sid": 414169011232316
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 614475145558931,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-right"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 881519382694658,
+							"parameters": {
+								"variable": "directionX",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 511412734291372,
+							"parameters": {
+								"variable": "directionY",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 102136382342647,
+							"parameters": {
+								"variable": "delayState",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 262575711242638,
+							"parameters": {
+								"variable": "joystick",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "Clock",
+							"sid": 693291784154353,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 855386931295347,
+							"parameters": {
+								"seconds": "dt"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Clock",
+							"sid": 200691920337709,
+							"parameters": {
+								"duration": "0",
+								"type": "once",
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"sid": 987585717017677
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Clock",
+							"sid": 120881396024453,
+							"parameters": {
+								"tag": "\"gamepadChangingDirection\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 703263314136819,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 142534743321409,
+									"parameters": {
+										"first-value": "round(angle(0, 0, directionX, directionY) / 90) * 90",
+										"comparison": 1,
+										"second-value": "round(angle(0, 0, Gamepad.Axis(0,0), Gamepad.Axis(0,1)) / 90) * 90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 922607113923402,
+									"parameters": {
+										"variable": "directionX",
+										"value": "Gamepad.Axis(0,0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 377255905389536,
+									"parameters": {
+										"variable": "directionY",
+										"value": "Gamepad.Axis(0,1)"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 927883027702979,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 942857398189060,
+									"parameters": {
+										"seconds": "dt"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 807781878015679,
+									"parameters": {
+										"variable": "delayState",
+										"value": "min(delayState, 2)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 268128773404217,
+									"parameters": {
+										"duration": "0",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 237862499979308
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 779218431592267,
+							"parameters": {
+								"variable": "joystick"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 331562927854549,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 472846308580931,
+									"parameters": {
+										"first-value": "round(angle(0, 0, directionX, directionY) / 90) * 90",
+										"comparison": 1,
+										"second-value": "round(angle(0, 0, Gamepad.Axis(0,0), Gamepad.Axis(0,1)) / 90) * 90"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "Clock",
+									"sid": 611709849670750,
+									"parameters": {
+										"tag": "\"gamepadChangingDirection\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 248812526927347,
+									"parameters": {
+										"duration": "0.1",
+										"type": "once",
+										"tag": "\"gamepadChangingDirection\""
+									}
+								}
+							],
+							"sid": 482689171973563
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 757422260575066,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 214570435151839,
+							"parameters": {
+								"gamepad": "0",
+								"axis": "left-analog-y-axis",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 502196623585432,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-up"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 691759924104408,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 561074512278707,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-left"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 534198449359828,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-right"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "Clock",
+							"sid": 582888018494231,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Clock",
+							"sid": 403117308686088,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 669494429730748,
+							"parameters": {
+								"variable": "delayState",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 602104500426739
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Clock",
+							"sid": 598342926929417,
+							"parameters": {
+								"tag": "\"gamepadMenu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Menu Gamepad Move",
+							"sid": 628966695699301,
+							"parameters": [
+								"directionX",
+								"directionY"
+							]
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 809190324202892,
+							"parameters": {
+								"variable": "delayState",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 395860834544107,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 749981071690963,
+									"parameters": {
+										"variable": "delayState",
+										"comparison": 2,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 165532338831414,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 763456795519550,
+									"parameters": {
+										"seconds": "2/60"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 806906168731180,
+									"parameters": {
+										"duration": "0.35",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 482459279712228
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 894280646813088
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 349853365845077,
+									"parameters": {
+										"variable": "delayState",
+										"comparison": 2,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 142150217266094,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 427740517259451,
+									"parameters": {
+										"seconds": "2/60"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 167739124733668,
+									"parameters": {
+										"duration": "0.28",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 378027412722791
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 726419637877746
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 233460919038647,
+									"parameters": {
+										"variable": "delayState",
+										"comparison": 2,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 610689234341446,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 333582692525662,
+									"parameters": {
+										"seconds": "2/60"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 841098258769020,
+									"parameters": {
+										"duration": "0.2",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 850661261733960
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 940425166337093
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "Clock",
+									"sid": 264087343599738,
+									"parameters": {
+										"tag": "\"gamepadMenu\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 125453927221275,
+									"parameters": {
+										"seconds": "2/60"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Clock",
+									"sid": 933028267998708,
+									"parameters": {
+										"duration": "0.15",
+										"type": "once",
+										"tag": "\"gamepadMenu\""
+									}
+								}
+							],
+							"sid": 631364554031821
+						}
+					]
+				},
+				{
+					"functionName": "Menu Gamepad Move",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "dirX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 111633025246622
+						},
+						{
+							"name": "dirY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 171899988515045
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 815188623790754,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "ang",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 324563451955482
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 115761238037149,
+									"parameters": {
+										"variable": "ang",
+										"value": "round(angle(0, 0, dirX, dirY) / 90) * 90"
+									}
+								}
+							],
+							"sid": 532476705798486
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "UIButton",
+									"sid": 231000034592056
+								},
+								{
+									"id": "isfocused",
+									"objectClass": "UIButton",
+									"sid": 963715927720695,
+									"behaviorType": "Button"
+								},
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 834165743497871,
+									"parameters": {
+										"object": "UIButton"
+									}
+								},
+								{
+									"id": "is-on-screen",
+									"objectClass": "UIButton",
+									"sid": 998032091873536
+								}
+							],
+							"actions": [],
+							"sid": 133129728688595,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "y",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 877564389011938
+								},
+								{
+									"eventType": "variable",
+									"name": "x",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 232879298389099
+								},
+								{
+									"eventType": "variable",
+									"name": "found",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 528940101389254
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "isfocused",
+											"objectClass": "UIButton",
+											"sid": 103860056951767,
+											"behaviorType": "Button"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 439733332313750,
+											"parameters": {
+												"variable": "x",
+												"value": "UIButton.X"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 248789949924894,
+											"parameters": {
+												"variable": "y",
+												"value": "UIButton.Y"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 873239238946647,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "debugSprite",
+												"layer": "\"debug\"",
+												"x": "x",
+												"y": "y",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "debugSprite",
+											"sid": 780656850423687,
+											"disabled": true,
+											"parameters": {
+												"width": "300",
+												"height": "4"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debugSprite",
+											"sid": 417629314011607,
+											"disabled": true,
+											"parameters": {
+												"frame-number": "2"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "debugSprite",
+											"sid": 849458031540671,
+											"disabled": true,
+											"parameters": {
+												"angle": "ang + 30"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 401722584285370,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "debugSprite",
+												"layer": "\"debug\"",
+												"x": "x",
+												"y": "y",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "debugSprite",
+											"sid": 415170782046699,
+											"disabled": true,
+											"parameters": {
+												"width": "300",
+												"height": "4"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debugSprite",
+											"sid": 174451529041798,
+											"disabled": true,
+											"parameters": {
+												"frame-number": "2"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "debugSprite",
+											"sid": 676584889703421,
+											"disabled": true,
+											"parameters": {
+												"angle": "ang - 30"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 745547863554029,
+											"parameters": {
+												"seconds": "0"
+											}
+										}
+									],
+									"sid": 355576250162607,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 754150172093259,
+													"parameters": {
+														"variable": "found"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "setFocused",
+													"objectClass": "UIButton",
+													"sid": 171558965203006,
+													"behaviorType": "Button",
+													"parameters": {
+														"state": "no"
+													}
+												}
+											],
+											"sid": 270216275192839
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 203230193194355
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 157773502384336,
+													"parameters": {
+														"object-to-create": "debugSprite",
+														"layer": "\"debug\"",
+														"x": "UIButton.BBoxLeft",
+														"y": "UIButton.BBoxTop",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "debugSprite",
+													"sid": 283375567611255,
+													"parameters": {
+														"frame-number": "2"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "debugSprite",
+													"sid": 202660257036942,
+													"parameters": {
+														"width": "UIButton.Width",
+														"height": "UIButton.Height"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "debugSprite",
+													"sid": 751539975321994,
+													"parameters": {
+														"angle": "UIButton.Angle"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "debugSprite",
+													"sid": 342050431076062,
+													"parameters": {
+														"opacity": "20"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 413380368814683,
+													"parameters": {
+														"seconds": "0.3"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 465940418385682,
+													"parameters": {
+														"object-to-create": "debugSprite",
+														"layer": "\"debug\"",
+														"x": "UIButton.BBoxLeft",
+														"y": "UIButton.BBoxTop",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "debugSprite",
+													"sid": 532243329786153,
+													"parameters": {
+														"frame-number": "2"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "debugSprite",
+													"sid": 322967269637157,
+													"parameters": {
+														"width": "UIButton.Width",
+														"height": "UIButton.Height"
+													}
+												},
+												{
+													"id": "set-angle",
+													"objectClass": "debugSprite",
+													"sid": 384084803366114,
+													"parameters": {
+														"angle": "UIButton.Angle"
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "debugSprite",
+													"sid": 710844217713487,
+													"parameters": {
+														"opacity": "20"
+													}
+												}
+											],
+											"sid": 848598086130100,
+											"disabled": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "isfocused",
+											"objectClass": "UIButton",
+											"sid": 312752568354042,
+											"behaviorType": "Button",
+											"isInverted": true
+										},
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 700171809913244,
+											"parameters": {
+												"object": "UIButton",
+												"expression": "anglediff(angle(x, y, UIButton.X, UIButton.Y), ang)",
+												"comparison": 2,
+												"value": "30"
+											}
+										},
+										{
+											"id": "isclickable",
+											"objectClass": "UIButton",
+											"sid": 488131902540049,
+											"behaviorType": "Button"
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "UIButton",
+											"sid": 995174814044989,
+											"parameters": {
+												"instance-variable": "noGamepad"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "UIButton",
+											"sid": 931134015699490,
+											"parameters": {
+												"which": "nearest",
+												"x": "x",
+												"y": "y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 855732435930429,
+											"parameters": {
+												"variable": "found",
+												"value": "true"
+											}
+										},
+										{
+											"id": "setFocused",
+											"objectClass": "UIButton",
+											"sid": 901462403043407,
+											"behaviorType": "Button",
+											"parameters": {
+												"state": "yes"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 510918333090133,
+											"disabled": true,
+											"parameters": {
+												"object-to-create": "debugSprite",
+												"layer": "\"debug\"",
+												"x": "UIButton.BBoxLeft",
+												"y": "UIButton.BBoxTop",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "debugSprite",
+											"sid": 358048671891139,
+											"disabled": true,
+											"parameters": {
+												"width": "UIButton.Width",
+												"height": "UIButton.Height"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "debugSprite",
+											"sid": 198945028184258,
+											"disabled": true,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "debugSprite",
+											"sid": 911615786283127,
+											"disabled": true,
+											"parameters": {
+												"angle": "UIButton.Angle"
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "debugSprite",
+											"sid": 935414618550178,
+											"disabled": true,
+											"parameters": {
+												"opacity": "20"
+											}
+										}
+									],
+									"sid": 127658909834300
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 212746906488084
+								}
+							],
+							"actions": [],
+							"sid": 554560647830234,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "UIButton",
+											"sid": 741972687701187
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "UIButton",
+											"sid": 366811861777829,
+											"parameters": {
+												"instance-variable": "entry"
+											}
+										},
+										{
+											"id": "isclickable",
+											"objectClass": "UIButton",
+											"sid": 926255919689427,
+											"behaviorType": "Button"
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "UIButton",
+											"sid": 509538077445621,
+											"parameters": {
+												"instance-variable": "noGamepad"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "UIButton",
+											"sid": 450810790968363,
+											"parameters": {
+												"which": "nearest",
+												"x": "0",
+												"y": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "setFocused",
+											"objectClass": "UIButton",
+											"sid": 731861790364507,
+											"behaviorType": "Button",
+											"parameters": {
+												"state": "yes"
+											}
+										}
+									],
+									"sid": 912476212741195
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 426045674040649,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "isfocused",
+							"objectClass": "UIButton",
+							"sid": 539974304335792,
+							"behaviorType": "Button"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "UIButton",
+							"sid": 860013820692109,
+							"parameters": {
+								"instance-variable": "noGamepad"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "simulateclick",
+							"objectClass": "UIButton",
+							"sid": 858694468184773,
+							"behaviorType": "Button"
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "UIButton",
+							"sid": 438533218929065,
+							"disabled": true,
+							"parameters": {
+								"object": "debugSprite",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "debugSprite",
+							"sid": 512278884553108,
+							"disabled": true,
+							"parameters": {
+								"layer": "\"debug\""
+							}
+						}
+					],
+					"sid": 465918536047114,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "UIButton",
+									"sid": 720971369192884,
+									"parameters": {
+										"instance-variable": "tooltip",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 270177006759087,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "UIButton",
+											"sid": 474089727094272,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"tooltip\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-timer",
+											"objectClass": "UIButton",
+											"sid": 624475622743052,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"tooltip\""
+											}
+										}
+									],
+									"sid": 162791611350768
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 553140322131452
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "closeTooltip",
+											"sid": 799454754134929
+										}
+									],
+									"sid": 412731212665034
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 604932349255874
+		}
+	],
+	"sid": 876817821058375
+}

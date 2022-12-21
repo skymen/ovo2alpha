@@ -1,0 +1,39 @@
+{
+	"name": "Particles_LaserWarmup",
+	"plugin-id": "Particles",
+	"sid": 683321831382300,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "tarx",
+			"type": "number",
+			"desc": "",
+			"sid": 880079227625152
+		},
+		{
+			"name": "tary",
+			"type": "number",
+			"desc": "",
+			"sid": 854893825105486
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 704067375294639
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 250,
+		"height": 250,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6,
+		"useCollisionPoly": true
+	}
+}

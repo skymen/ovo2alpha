@@ -1,0 +1,92 @@
+{
+	"name": "Globals",
+	"plugin-id": "Globals",
+	"sid": 152472801035076,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "Down",
+			"type": "boolean",
+			"desc": "",
+			"sid": 158986441620062
+		},
+		{
+			"name": "PerLevel",
+			"type": "boolean",
+			"desc": "",
+			"sid": 681583707149500
+		},
+		{
+			"name": "StartTime",
+			"type": "number",
+			"desc": "",
+			"sid": 385456392745867
+		},
+		{
+			"name": "ScoreBase",
+			"type": "number",
+			"desc": "",
+			"sid": 306004882991515
+		},
+		{
+			"name": "StartOfGame",
+			"type": "boolean",
+			"desc": "",
+			"sid": 224540154811314
+		},
+		{
+			"name": "BlowSave",
+			"type": "boolean",
+			"desc": "",
+			"sid": 981620889339422
+		},
+		{
+			"name": "Skin",
+			"type": "string",
+			"desc": "",
+			"sid": 203011690923678
+		},
+		{
+			"name": "NbLevels",
+			"type": "number",
+			"desc": "",
+			"sid": 938100776584257
+		},
+		{
+			"name": "DebugMode",
+			"type": "boolean",
+			"desc": "",
+			"sid": 195086981709969
+		},
+		{
+			"name": "RandomSkin",
+			"type": "boolean",
+			"desc": "",
+			"sid": 146507020884525
+		},
+		{
+			"name": "TestMode",
+			"type": "boolean",
+			"desc": "",
+			"sid": 502150651729053
+		},
+		{
+			"name": "LastLayout",
+			"type": "string",
+			"desc": "",
+			"sid": 994004783847150
+		},
+		{
+			"name": "Record",
+			"type": "boolean",
+			"desc": "",
+			"sid": 148683702544219
+		},
+		{
+			"name": "EasyMode",
+			"type": "boolean",
+			"desc": "",
+			"sid": 819600593249674
+		}
+	]
+}

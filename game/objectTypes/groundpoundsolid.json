@@ -1,0 +1,26 @@
+{
+	"name": "GroundPoundSolid",
+	"plugin-id": "TiledBg",
+	"sid": 395698290022538,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 507555113874789
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 24,
+		"height": 8,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 65,
+		"useCollisionPoly": true
+	}
+}

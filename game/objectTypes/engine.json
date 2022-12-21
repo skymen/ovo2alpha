@@ -1,0 +1,10 @@
+{
+	"name": "Engine",
+	"plugin-id": "CV_Engine",
+	"sid": 681696761866744,
+	"singleglobal-inst": {
+		"type": "Engine",
+		"properties": {},
+		"uid": 83
+	}
+}

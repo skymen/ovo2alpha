@@ -1,0 +1,24 @@
+{
+	"name": "Solids",
+	"plugin-id": "TiledBg",
+	"sid": 663575012639858,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 671656681725856
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"GroundPoundSolid",
+		"SolidMove",
+		"Solid3",
+		"Solid",
+		"Solid2",
+		"JumpThrough",
+		"RealJumpThrough",
+		"DestructibleFloor"
+	]
+}

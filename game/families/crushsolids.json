@@ -1,0 +1,21 @@
+{
+	"name": "CrushSolids",
+	"plugin-id": "TiledBg",
+	"sid": 556181773641702,
+	"instanceVariables": [
+		{
+			"name": "enabled",
+			"type": "boolean",
+			"desc": "",
+			"sid": 760143187430237
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Solid",
+		"Solid2",
+		"SolidMove",
+		"RealJumpThrough"
+	]
+}

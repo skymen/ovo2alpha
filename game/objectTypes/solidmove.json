@@ -1,0 +1,26 @@
+{
+	"name": "SolidMove",
+	"plugin-id": "TiledBg",
+	"sid": 268336515357749,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 995841676872147
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 8,
+		"height": 8,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 10,
+		"useCollisionPoly": true
+	}
+}

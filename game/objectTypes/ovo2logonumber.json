@@ -1,0 +1,58 @@
+{
+	"name": "OvO2LogoNumber",
+	"plugin-id": "Sprite",
+	"sid": 423629319403028,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "aekiro_gameobjectskymen",
+			"name": "GameObject",
+			"sid": 905197055988448
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 900406502532304
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 168486764571377
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine3",
+			"sid": 357226685043012
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 384,
+						"height": 547,
+						"originX": 0.46137152777777785,
+						"originY": 0.5039655050063022,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3730688,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 413369778248516,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

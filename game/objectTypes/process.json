@@ -1,0 +1,12 @@
+{
+	"name": "Process",
+	"plugin-id": "CV_Process",
+	"sid": 119808199641404,
+	"singleglobal-inst": {
+		"type": "Process",
+		"properties": {
+			"debug-mode-:": "enabled"
+		},
+		"uid": 81
+	}
+}

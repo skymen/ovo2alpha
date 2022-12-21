@@ -1,0 +1,497 @@
+{
+	"name": "Levels",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Player"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Debug"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Gameplay"
+		},
+		{
+			"eventType": "variable",
+			"name": "levelWidth",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 301437772693090
+		},
+		{
+			"eventType": "variable",
+			"name": "levelHeight",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 769832268563615
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 211916643391203
+				}
+			],
+			"actions": [
+				{
+					"id": "execute-javascript",
+					"objectClass": "Browser",
+					"sid": 392026453336250,
+					"parameters": {
+						"javascript": "\"globalThis.sdk_runtime = this._runtime\""
+					}
+				}
+			],
+			"sid": 297410864073028,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "LayoutNameHolder",
+							"sid": 121325551067927,
+							"parameters": {
+								"instance-variable": "needSlope"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 579557352639981,
+							"parameters": {
+								"group-name": "\"Player > Slopes\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 550727698786752,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 891063915479631
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 435162935889771,
+							"parameters": {
+								"group-name": "\"Player > Slopes\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 873216348980319,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Globals",
+							"sid": 626503293025225,
+							"parameters": {
+								"instance-variable": "EasyMode"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Spike",
+							"sid": 649972794148386,
+							"parameters": {
+								"instance-variable": "hardOnly"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Spike",
+							"sid": 990886466527048
+						}
+					],
+					"sid": 892141100538122
+				},
+				{
+					"eventType": "variable",
+					"name": "BORDERWIDTH",
+					"type": "number",
+					"initialValue": "84",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 134590617515558
+				},
+				{
+					"eventType": "variable",
+					"name": "BORDEROPA",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 167568863684822
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 194963715598355,
+							"parameters": {
+								"variable": "levelHeight",
+								"value": "LayoutHeight"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 154313634192538,
+							"parameters": {
+								"variable": "levelWidth",
+								"value": "LayoutWidth"
+							}
+						},
+						{
+							"type": "script",
+							"script": "console.log(globalThis.currentLevel)\nlocalVars.levelWidth = globalThis.currentLevel.width;\nlocalVars.levelHeight = globalThis.currentLevel.height;",
+							"disabled": true
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 522887981832615,
+							"parameters": {
+								"object-to-create": "Border",
+								"layer": "\"Layer 0\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Border",
+							"sid": 364520956273615,
+							"parameters": {
+								"width": "levelWidth",
+								"height": "BORDERWIDTH"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Border",
+							"sid": 412217156278272,
+							"disabled": true
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Border",
+							"sid": 480022738823718,
+							"parameters": {
+								"opacity": "BORDEROPA"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 163085333409317,
+							"parameters": {
+								"object-to-create": "Border",
+								"layer": "\"Layer 0\"",
+								"x": "0",
+								"y": "levelHeight",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Border",
+							"sid": 951352316856846,
+							"parameters": {
+								"width": "levelHeight",
+								"height": "BORDERWIDTH"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Border",
+							"sid": 644790040851384,
+							"parameters": {
+								"angle": "-90"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Border",
+							"sid": 439178753140286,
+							"disabled": true
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Border",
+							"sid": 583592500799488,
+							"parameters": {
+								"opacity": "BORDEROPA"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 675206978870564,
+							"parameters": {
+								"object-to-create": "Border",
+								"layer": "\"Layer 0\"",
+								"x": "levelWidth",
+								"y": "levelHeight",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Border",
+							"sid": 346678050812997,
+							"parameters": {
+								"width": "levelWidth",
+								"height": "BORDERWIDTH"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Border",
+							"sid": 823432082669211,
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Border",
+							"sid": 564212419493658,
+							"disabled": true
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Border",
+							"sid": 480418149030668,
+							"parameters": {
+								"opacity": "BORDEROPA"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 627395015587820,
+							"parameters": {
+								"object-to-create": "Border",
+								"layer": "\"Layer 0\"",
+								"x": "levelWidth",
+								"y": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Border",
+							"sid": 610615813296267,
+							"parameters": {
+								"width": "levelHeight",
+								"height": "BORDERWIDTH"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Border",
+							"sid": 158638447830924,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "move-to-bottom",
+							"objectClass": "Border",
+							"sid": 703304115845178,
+							"disabled": true
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Border",
+							"sid": 656650700016691,
+							"parameters": {
+								"opacity": "BORDEROPA"
+							}
+						},
+						{
+							"type": "script",
+							"script": "createCurLevel();",
+							"disabled": true
+						}
+					],
+					"sid": 169474553709376
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 341920788753962
+				}
+			],
+			"actions": [],
+			"sid": 890495677448595,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 836807647110536,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"Level 1-1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Globals",
+							"sid": 852045873677922,
+							"parameters": {
+								"instance-variable": "StartTime",
+								"value": "time"
+							}
+						}
+					],
+					"sid": 449548862374724
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 141405139515805,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"Level dlc\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 590125597320068,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"Level dlc2\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 726877947481906,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "TimerTick",
+									"sid": 841002963826968,
+									"parameters": {
+										"instance-variable": "id",
+										"comparison": 0,
+										"value": "\"time\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "TimerTick",
+									"sid": 363138864172336,
+									"behaviorType": "SpritefontDeluxe",
+									"parameters": {
+										"text": "\"Your time is: \"&newline & \"[sfdx=offsety 8*sin(t * 360 + i * 90)]\" & str(round((time - Globals.StartTime) * 100)/100) & \" seconds[/sfdx]\""
+									}
+								}
+							],
+							"sid": 237766885431848
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 871259861524384
+				}
+			],
+			"actions": [],
+			"sid": 945236765561637,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "let inst = sdk_runtime.GetInstanceByUID(708)._behaviorInstances[0]._sdkInst;\nconsole.log(inst)\n\nlet fn = function() {\n\tvar parent = this.parent_get();\n\tconsole.log(this.local.angle);\n\tif(parent) {\n\t\tvar wp = parent.GetWorldInfo();\n\t\tvar angle = wp.GetAngle() + this.local.angle;\n\t\tconsole.log(angle);\n\t\treturn angle;\n\t} else {\n\t\treturn this.local.angle;\n\t}\n}\ninst.children.forEach(x=>{\n\tx._behaviorInstances[0]._sdkInst.localToGlobal_angle = fn.bind(x._behaviorInstances[0]._sdkInst);\n})\ninst.localToGlobal_angle = fn.bind(inst);\n\nlet fn2 = function() {\n    console.log(\"test\")\n\tif(!this.children.length)\n\t\treturn;\n\n\tvar inst,wi;\n\tfor (var i = 0, l= this.children.length; i < l; i++) {\n\t\tinst = this.children[i];\n\t\tconsole.log(inst)\n\t\twi = inst.GetWorldInfo();\n\t\tif (!inst.prevFrame) {\n\t\t\tinst.prevFrame = {\n\t\t\t\tx: wi.GetX(),\n\t\t\t\ty: wi.GetY(),\n\t\t\t\tangle: wi.GetAngle()\n\t\t\t}\n\t\t}\n\t\t//updating the child's global coordinates when the parent global coordinates changes.\n\t\twi.SetXY(wi.GetX(\"g\") + wi.GetX() - inst.prevFrame.x, wi.GetY(\"g\") + wi.GetY() - inst.prevFrame.y, \"g\");\n\t\twi.SetAngle(wi.GetAngle(\"g\") + wi.GetAngle() - inst.prevFrame.angle, \"g\");\n\t\twi.SetBboxChanged();\n\t\tinst.prevFrame = {\n\t\t\tx: wi.GetX(),\n\t\t\ty: wi.GetY(),\n\t\t\tangle: wi.GetAngle()\n\t\t}\n\t}\n}\n\ninst.children_update = fn2.bind(inst);\ninst.children_update();",
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 314412668353217,
+					"disabled": true
+				}
+			],
+			"actions": [],
+			"sid": 783455874122791,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "script",
+					"script": "let inst = sdk_runtime.GetInstanceByUID(708)._behaviorInstances[0]._sdkInst;\ninst.children_update();",
+					"disabled": true
+				}
+			]
+		}
+	],
+	"sid": 826062882993495
+}
